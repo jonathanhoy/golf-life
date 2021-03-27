@@ -35,10 +35,10 @@ function App() {
       <Router>
         <div>
           <h1>My Personal Webpage!</h1>
-          <Link to="/about">About</Link>
+          <Link to="/home">Home</Link>
           <Link to="/contact">Contact</Link>
           <Link to="/tournaments">Past Tournaments</Link>
-          <Route path="/about" component={About} />
+          <Route path="/home" component={About} />
           <Route path="/contact" component={Contact} />
           <Route path="/tournaments" component={Tournaments} />
         </div>
