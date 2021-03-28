@@ -2,7 +2,7 @@ import React from 'react';
 import variables from '../styles/variables';
 import Wrapper from '../styles/Wrapper';
 import styled from 'styled-components';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
   render() {

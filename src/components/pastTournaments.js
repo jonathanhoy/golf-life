@@ -2,16 +2,14 @@ import React, { Component } from 'react';
 import { Card, CardList } from '../styles/Card';
 import Wrapper from '../styles/Wrapper';
 import PageHeading from '../styles/PageHeading';
-import { firebase, records, meta } from '../firebase';
-import { byLatestTourney, byLatestTourneyAndMapCount } from '../sortingFunctions';
+import { firebase, meta } from '../firebase';
+import { byLatestTourney } from '../sortingFunctions';
 
 class PastTournaments extends Component {
   constructor() {
     super();
     this.state = {
-      meta: [
-
-      ]
+      meta: []
     }
   }
 
@@ -23,6 +21,7 @@ class PastTournaments extends Component {
       const sortedData = data.sort(byLatestTourney);
       let newMeta = [];
       newMeta = [...sortedData];
+      // eslint-disable-next-line
       const cleanedMeta = newMeta.filter((tourney) => {
         if (tourney !== undefined && tourney.tourney_id >= 1) {
           return tourney;

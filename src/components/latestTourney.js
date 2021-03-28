@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Card, CardList } from '../styles/Card';
 import Wrapper from '../styles/Wrapper';
 import PageHeading from '../styles/PageHeading';
-import { firebase, records, meta } from '../firebase';
-import { byLatestTourney, byLatestTourneyAndMapCount } from '../sortingFunctions';
+import { firebase, meta } from '../firebase';
+import { byLatestTourney } from '../sortingFunctions';
 
 class LatestTourney extends Component {
   constructor() {
