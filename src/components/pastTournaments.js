@@ -36,13 +36,13 @@ class PastTournaments extends Component {
   render() {
     return (
       <Wrapper>
-        <PageHeading>Tournaments</PageHeading>
+        <PageHeading>History</PageHeading>
         <CardList>
           {(this.state.meta).map((tournament) => {
-              // console.log('test', tournament['tourney_id']);
               return (
                 <Card>
                   <h3>Tournament #{tournament.tourney_id}</h3>
+                  <p>{tournament.date}</p>
                   <table>
                     <tbody>
                       <tr>

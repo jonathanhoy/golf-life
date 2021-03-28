@@ -30,10 +30,11 @@ class LatestTourney extends Component {
   render() {
     return (
       <Wrapper>
-        <PageHeading>Latest Tourney</PageHeading>
+        <PageHeading>Latest Result</PageHeading>
         <CardList>
         <Card>
           <h3>Tournament #{this.state.meta.tourney_id}</h3>
+          <p>{this.state.meta.date}</p>
           <table>
             <tbody>
               <tr>

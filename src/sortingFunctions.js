@@ -22,4 +22,13 @@ const byLatestTourneyAndMapCount = ( a, b ) => {
   }
 }
 
-export { byLatestTourney, byLatestTourneyAndMapCount };
+const byWinPercentage = ( a, b ) => {
+  if ( a.win_rate > b.win_rate ){
+    return -1;
+  }
+  if ( a.win_rate < b.win_rate ){
+    return 1;
+  }
+}
+
+export { byLatestTourney, byLatestTourneyAndMapCount, byWinPercentage };

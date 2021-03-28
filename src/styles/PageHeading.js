@@ -3,6 +3,7 @@ import variables from './variables';
 
 const PageHeading = styled.h2`
     color: ${variables.white};
+    font-family: ${variables.heading};
     font-size: 2rem;
     margin: 1.5rem 0;
 `;

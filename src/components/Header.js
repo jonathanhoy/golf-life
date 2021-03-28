@@ -14,7 +14,7 @@ class Header extends React.Component {
             <div>
               <Link to="/">Home</Link>
               {/* <Link to="/players">Players</Link> */}
-              <Link to="/tournaments">Past Tournaments</Link>
+              <Link to="/tournaments">Tournaments</Link>
             </div>
           </nav>
         </Wrapper>
