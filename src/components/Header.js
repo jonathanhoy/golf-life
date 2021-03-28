@@ -26,19 +26,16 @@ class Header extends React.Component {
 const StyledHeader = styled.header`
   background: ${variables.white};
   padding: 1.5rem 0;
-  h1 {
-    color: ${variables.green};
-    margin: 0;
-    font-size: 2.5rem;
-    font-family: ${variables.heading};
-    @media (max-width: ${variables.sm}) {
-        font-size: 2rem;
-    }
-  }
   nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    h1 {
+      color: ${variables.green};
+      margin: 0;
+      font-size: 2.5rem;
+      font-family: ${variables.heading};
+    }
     div {
       a {
         color: ${variables.green};
@@ -47,6 +44,25 @@ const StyledHeader = styled.header`
         text-decoration: none;
         margin-left: 1.5rem;
         font-weight: 600;
+      }
+    }
+  }
+  @media (max-width: ${variables.sm}) {
+    padding: 0.5rem 0;
+    nav {
+      flex-direction: column;
+      justify-content: space-between;
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      div {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        a {
+          margin-left: 0;
+        }
       }
     }
   }

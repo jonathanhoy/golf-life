@@ -57,6 +57,9 @@ const CardList = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1.5rem;
+  @media (max-width: ${variables.sm}) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export { Card, CardList };
