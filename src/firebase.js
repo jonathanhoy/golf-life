@@ -13,5 +13,6 @@ const config = {
 firebase.initializeApp(config);
 
 const records = '1mDdt2Y3_Yb-0ByOOQhbiAJ1rsv0E7ct41vRdyoBE64s/match_record/';
+const meta = '1mDdt2Y3_Yb-0ByOOQhbiAJ1rsv0E7ct41vRdyoBE64s/tourney_meta/';
 
-export {firebase, records};
+export {firebase, records, meta};
