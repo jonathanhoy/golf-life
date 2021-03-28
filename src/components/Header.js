@@ -10,7 +10,7 @@ class Header extends React.Component {
       <StyledHeader>
         <Wrapper>
           <nav>
-            <h1>Golf With Your Friends</h1>
+            <h1>Golf Life 🏌🏻‍♂️</h1>
             <div>
               <Link to="/">Home</Link>
               {/* <Link to="/players">Players</Link> */}
@@ -52,16 +52,18 @@ const StyledHeader = styled.header`
     nav {
       flex-direction: column;
       justify-content: space-between;
+      align-items: flex-start;
       h1 {
         font-size: 2rem;
         margin-bottom: 1rem;
       }
       div {
         display: flex;
-        justify-content: space-around;
+        justify-content: flex-start;
         width: 100%;
         a {
           margin-left: 0;
+          margin-right: 1.5rem;
         }
       }
     }

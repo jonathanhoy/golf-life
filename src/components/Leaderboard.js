@@ -40,6 +40,7 @@ class Leaderboard extends Component {
         <PageHeading>Wins</PageHeading>
         <CardList>
           <Card>
+          <h3>Lifetime Standings</h3>
             <table className="wins">
               <tbody>
                 <tr>

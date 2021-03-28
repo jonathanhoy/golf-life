@@ -35,13 +35,13 @@ class LatestTourney extends Component {
         <Card>
           <h3>Tournament #{this.state.meta.tourney_id}</h3>
           <p>{this.state.meta.date}</p>
-          <table>
+          <table className="tournament">
             <tbody>
               <tr>
                 <th>Player</th>
-                <th>{this.state.meta.map1_name}<br/>({this.state.meta.map1_par})</th>
-                <th>{this.state.meta.map2_name}<br/>({this.state.meta.map2_par})</th>
-                <th>{this.state.meta.map3_name}<br/>({this.state.meta.map3_par})</th>
+                <th><span className="show-for-small-vertical">Map 1</span><span className="hide-for-small-vertical">{this.state.meta.map1_name}</span><br/>({this.state.meta.map1_par})</th>
+                <th><span className="show-for-small-vertical">Map 2</span><span className="hide-for-small-vertical">{this.state.meta.map2_name}</span><br/>({this.state.meta.map2_par})</th>
+                <th><span className="show-for-small-vertical">Map 3</span><span className="hide-for-small-vertical">{this.state.meta.map3_name}</span><br/>({this.state.meta.map3_par})</th>
                 <th>Total<br/>({this.state.meta.total_par})</th>
               </tr>
               <tr>

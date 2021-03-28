@@ -4,8 +4,10 @@ const variables = {
     belowPar: '#3CB371',
     abovePar: '#B22222',
     white: '#fff',
+    black: '#000',
 
     // SCREENSIZES
+    smVertical: '31.25rem',
     sm: '47.9375rem',
     md: '63.9375rem',
     lg: '64rem',
