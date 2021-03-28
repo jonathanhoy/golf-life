@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import { Card, CardList } from '../styles/Card';
+import Wrapper from '../styles/Wrapper';
+import PageHeading from '../styles/PageHeading';
 import { firebase, records, meta } from '../firebase';
 import { byLatestTourney, byLatestTourneyAndMapCount } from '../sortingFunctions';
 
@@ -7,20 +9,13 @@ class LatestTourney extends Component {
   constructor() {
     super();
     this.state = {
-      mapOne: [],
-      mapTwo: [],
-      mapThree: [],
-      map: "",
-      par: 0,
-      players: [],
       meta: {}
     }
   }
 
   componentDidMount() {
-
-    const dbRefMeta = firebase.database().ref(`${meta}`);
-    dbRefMeta.on('value', (response) => {
+    const dbRef = firebase.database().ref(`${meta}`);
+    dbRef.on('value', (response) => {
       const data = response.val();
       // Sort data to get latest tournament
       const sortedData = data.sort(byLatestTourney);
@@ -34,8 +29,9 @@ class LatestTourney extends Component {
 
   render() {
     return (
-      <>
-        <h2>Latest Tourney</h2>
+      <Wrapper>
+        <PageHeading>Latest Tourney</PageHeading>
+        <CardList>
         <Card>
           <h3>Tournament #{this.state.meta.tourney_id}</h3>
           <table>
@@ -82,23 +78,10 @@ class LatestTourney extends Component {
             </tbody>
           </table>
         </Card>
-      </>
+        </CardList>
+      </Wrapper>
     )
   }
 }
-
-const Card = styled.div`
-  table {
-    margin: 0 auto;
-    th, td {
-      padding: 10px 15px;
-      outline: 1px solid black;
-      width: 20%;
-    }
-    tr td:last-of-type {
-      font-weight: 700;
-    }
-  }
-`;
 
 export default LatestTourney;
