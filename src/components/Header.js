@@ -26,6 +26,12 @@ class Header extends React.Component {
 const StyledHeader = styled.header`
   background: ${variables.white};
   padding: 1.5rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.65); 
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.65);
   nav {
     display: flex;
     align-items: center;
