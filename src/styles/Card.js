@@ -50,6 +50,9 @@ const Card = styled.div`
       }
     }
     td {
+      &[data-below-par=true] {
+        color: ${variables.belowPar};
+      }
       &:first-of-type {
         text-align: left;
       }

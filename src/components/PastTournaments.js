@@ -50,40 +50,37 @@ class PastTournaments extends Component {
                         <th><span className="show-for-small-vertical">Map 1</span><span className="hide-for-small-vertical">{tournament.map1_name}</span><br/>({tournament.map1_par})</th>
                         <th><span className="show-for-small-vertical">Map 2</span><span className="hide-for-small-vertical">{tournament.map2_name}</span><br/>({tournament.map2_par})</th>
                         <th><span className="show-for-small-vertical">Map 3</span><span className="hide-for-small-vertical">{tournament.map3_name}</span><br/>({tournament.map3_par})</th>
-                        {/* <th>{tournament.map1_name}<br/>({tournament.map1_par})</th>
-                        <th>{tournament.map2_name}<br/>({tournament.map2_par})</th>
-                        <th>{tournament.map3_name}<br/>({tournament.map3_par})</th> */}
                         <th>Total<br/>({tournament.total_par})</th>
                       </tr>
                       <tr>
                         <td>{tournament.first_player}</td>
-                        <td>{tournament.first_map1_score}</td>
-                        <td>{tournament.first_map2_score}</td>
-                        <td>{tournament.first_map3_score}</td>
-                        <td>{tournament.first_total}</td>
+                        <td data-below-par={tournament.first_map1_under_par}>{tournament.first_map1_score}</td>
+                        <td data-below-par={tournament.first_map2_under_par}>{tournament.first_map2_score}</td>
+                        <td data-below-par={tournament.first_map3_under_par}>{tournament.first_map3_score}</td>
+                        <td data-below-par={tournament.first_total_under_par}>{tournament.first_total}</td>
                       </tr>
                       <tr>
                         <td>{tournament.second_player}</td>
-                        <td>{tournament.second_map1_score}</td>
-                        <td>{tournament.second_map2_score}</td>
-                        <td>{tournament.second_map3_score}</td>
-                        <td>{tournament.second_total}</td>
+                        <td data-below-par={tournament.second_map1_under_par}>{tournament.second_map1_score}</td>
+                        <td data-below-par={tournament.second_map2_under_par}>{tournament.second_map2_score}</td>
+                        <td data-below-par={tournament.second_map3_under_par}>{tournament.second_map3_score}</td>
+                        <td data-below-par={tournament.second_total_under_par}>{tournament.second_total}</td>
                       </tr>
                       <tr>
                         <td>{tournament.third_player}</td>
-                        <td>{tournament.third_map1_score}</td>
-                        <td>{tournament.third_map2_score}</td>
-                        <td>{tournament.third_map3_score}</td>
-                        <td>{tournament.third_total}</td>
+                        <td data-below-par={tournament.third_map1_under_par}>{tournament.third_map1_score}</td>
+                        <td data-below-par={tournament.third_map2_under_par}>{tournament.third_map2_score}</td>
+                        <td data-below-par={tournament.third_map3_under_par}>{tournament.third_map3_score}</td>
+                        <td data-below-par={tournament.third_total_under_par}>{tournament.third_total}</td>
                       </tr>
                       {
                         tournament.total_players > 3 && (
                           <tr>
                             <td>{tournament.fourth_player}</td>
-                            <td>{tournament.fourth_map1_score}</td>
-                            <td>{tournament.fourth_map2_score}</td>
-                            <td>{tournament.fourth_map3_score}</td>
-                            <td>{tournament.fourth_total}</td>
+                            <td data-below-par={tournament.fourth_map1_under_par}>{tournament.fourth_map1_score}</td>
+                            <td data-below-par={tournament.fourth_map2_under_par}>{tournament.fourth_map2_score}</td>
+                            <td data-below-par={tournament.fourth_map3_under_par}>{tournament.fourth_map3_score}</td>
+                            <td data-below-par={tournament.fourth_total_under_par}>{tournament.fourth_total}</td>
                           </tr>
                         )
                       }

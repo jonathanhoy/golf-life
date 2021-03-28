@@ -46,33 +46,33 @@ class LatestTourney extends Component {
               </tr>
               <tr>
                 <td>{this.state.meta.first_player}</td>
-                <td>{this.state.meta.first_map1_score}</td>
-                <td>{this.state.meta.first_map2_score}</td>
-                <td>{this.state.meta.first_map3_score}</td>
-                <td>{this.state.meta.first_total}</td>
+                <td data-below-par={this.state.meta.first_map1_under_par}>{this.state.meta.first_map1_score}</td>
+                <td data-below-par={this.state.meta.first_map2_under_par}>{this.state.meta.first_map2_score}</td>
+                <td data-below-par={this.state.meta.first_map3_under_par}>{this.state.meta.first_map3_score}</td>
+                <td data-below-par={this.state.meta.first_total_under_par}>{this.state.meta.first_total}</td>
               </tr>
               <tr>
                 <td>{this.state.meta.second_player}</td>
-                <td>{this.state.meta.second_map1_score}</td>
-                <td>{this.state.meta.second_map2_score}</td>
-                <td>{this.state.meta.second_map3_score}</td>
-                <td>{this.state.meta.second_total}</td>
+                <td data-below-par={this.state.meta.second_map1_under_par}>{this.state.meta.second_map1_score}</td>
+                <td data-below-par={this.state.meta.second_map2_under_par}>{this.state.meta.second_map2_score}</td>
+                <td data-below-par={this.state.meta.second_map3_under_par}>{this.state.meta.second_map3_score}</td>
+                <td data-below-par={this.state.meta.second_total_under_par}>{this.state.meta.second_total}</td>
               </tr>
               <tr>
                 <td>{this.state.meta.third_player}</td>
-                <td>{this.state.meta.third_map1_score}</td>
-                <td>{this.state.meta.third_map2_score}</td>
-                <td>{this.state.meta.third_map3_score}</td>
-                <td>{this.state.meta.third_total}</td>
+                <td data-below-par={this.state.meta.third_map1_under_par}>{this.state.meta.third_map1_score}</td>
+                <td data-below-par={this.state.meta.third_map2_under_par}>{this.state.meta.third_map2_score}</td>
+                <td data-below-par={this.state.meta.third_map3_under_par}>{this.state.meta.third_map3_score}</td>
+                <td data-below-par={this.state.meta.third_total_under_par}>{this.state.meta.third_total}</td>
               </tr>
               {
                 this.state.meta.total_players > 3 && (
                   <tr>
                     <td>{this.state.meta.fourth_player}</td>
-                    <td>{this.state.meta.fourth_map1_score}</td>
-                    <td>{this.state.meta.fourth_map2_score}</td>
-                    <td>{this.state.meta.fourth_map3_score}</td>
-                    <td>{this.state.meta.fourth_total}</td>
+                    <td data-below-par={this.state.meta.fourth_map1_under_par}>{this.state.meta.fourth_map1_score}</td>
+                    <td data-below-par={this.state.meta.fourth_map2_under_par}>{this.state.meta.fourth_map2_score}</td>
+                    <td data-below-par={this.state.meta.fourth_map3_under_par}>{this.state.meta.fourth_map3_score}</td>
+                    <td data-below-par={this.state.meta.fourth_total_under_par}>{this.state.meta.fourth_total}</td>
                   </tr>
                 )
               }
