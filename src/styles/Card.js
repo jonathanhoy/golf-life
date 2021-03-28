@@ -24,9 +24,14 @@ const Card = styled.div`
     width: 100%;
     text-align: center;
     border-collapse: collapse;
+    tr:first-of-type {
+      background: ${variables.green};
+    }
+    tr:nth-child(2n+1) {
+      background: lightgrey;
+    }
     th, td {
       padding: 8px 5px;
-      border: 1px solid black;
       font-family: ${variables.body};
       font-size: 1rem;
     }
@@ -54,43 +59,16 @@ const Card = styled.div`
       th {
         width: auto;
         &:first-of-type,
+        &:nth-child(2),
         &:last-of-type {
           width: 20%;
         }
-      }
-      th:nth-child(2),
-      td:nth-child(2) {
-        border-right: none;
-      }
-      th:nth-child(3),
-      td:nth-child(3) {
-        border-left: none;
-        border-right: none;
-      }
-      th:nth-child(4),
-      td:nth-child(4) {
-        border-left: none;
       }
       tr td:last-of-type {
         font-weight: 400;
       }
     }
     &.tournament {
-      th:nth-child(2),
-      td:nth-child(2) {
-        border-right: none;
-      }
-      th:nth-child(3),
-      td:nth-child(3),
-      th:nth-child(4),
-      td:nth-child(4) {
-        border-left: none;
-        border-right: none;
-      }
-      th:nth-child(5),
-      td:nth-child(5) {
-        border-left: none;
-      }
     }
   }
   @media (max-width: ${variables.smVertical}) {
