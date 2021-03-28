@@ -5,6 +5,8 @@ const Card = styled.div`
   display: inline-block;
   background: rgba(225,225,225,1);
   padding: 1rem;
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.65); 
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.65);
   h3 {
     font-size: 1.25rem;
     margin: 0.5rem 0;
