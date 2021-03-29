@@ -10,7 +10,7 @@ const Card = styled.div`
   height: 100%;
   h3 {
     font-size: 1.25rem;
-    margin: 2rem 0 0.5rem 0;
+    margin: 0.5rem 0;
     font-family: ${variables.body};
     color: ${variables.black};
     text-transform: uppercase;

@@ -44,7 +44,7 @@ class Accolades extends React.Component {
       <>
         <Card>
           <CardHeading>Accolades</CardHeading>
-          <div>
+          <AccoladesContainer>
             <h3>Best Course</h3>
             <Course>
               {
@@ -59,12 +59,11 @@ class Accolades extends React.Component {
                   )
                 })
               }
-
             </Course>
-          </div>
-          <div>
+          </AccoladesContainer>
+          <AccoladesContainer>
             <h3>Best Differential</h3>
-          </div>
+          </AccoladesContainer>
         </Card>
       </>
     )
@@ -75,6 +74,10 @@ const Course = styled.ul`
   list-style: none;
   padding: 0;
   display: flex;
+`;
+
+const AccoladesContainer = styled.div`
+  margin-top: 2rem;
 `;
 
 export default Accolades;
