@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardList } from '../styles/Card';
-import Wrapper from '../styles/Wrapper';
+import { Card } from '../styles/Card';
 import PageHeading from '../styles/PageHeading';
 import { firebase, wins } from '../firebase';
 import { byWinPercentage } from '../sortingFunctions';
@@ -17,7 +16,6 @@ class Leaderboard extends Component {
     const dbRef = firebase.database().ref(`${wins}`);
     dbRef.on('value', (response) => {
       const data = response.val();
-      console.log(data);
       // Sort data to get latest tournament
       const sortedData = data.sort(byWinPercentage);
       let newWins = {};
@@ -36,9 +34,8 @@ class Leaderboard extends Component {
 
   render() {
     return (
-      <Wrapper>
+      <>
         <PageHeading>Wins</PageHeading>
-        <CardList>
           <Card>
           <h3>Lifetime Standings</h3>
             <table className="wins">
@@ -52,7 +49,7 @@ class Leaderboard extends Component {
                 {
                   this.state.wins.map((player) => {
                     return (
-                      <tr>
+                      <tr key={player.player}>
                         <td>{player.player}</td>
                         <td>{player.total_wins}</td>
                         <td>{player.games_played}</td>
@@ -61,12 +58,10 @@ class Leaderboard extends Component {
                     )
                   })
                 }
-                
               </tbody>
             </table>
           </Card>
-        </CardList>
-      </Wrapper>
+      </>
     )
   }
 }

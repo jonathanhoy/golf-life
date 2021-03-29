@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardList } from '../styles/Card';
-import Wrapper from '../styles/Wrapper';
+import { Card } from '../styles/Card';
 import PageHeading from '../styles/PageHeading';
 import { firebase, meta } from '../firebase';
 import { byLatestTourney } from '../sortingFunctions';
@@ -29,9 +28,8 @@ class LatestTourney extends Component {
 
   render() {
     return (
-      <Wrapper>
+      <>
         <PageHeading>Latest Result</PageHeading>
-        <CardList>
         <Card>
           <h3>Tournament #{this.state.meta.tourney_id}</h3>
           <p>{this.state.meta.date}</p>
@@ -79,8 +77,7 @@ class LatestTourney extends Component {
             </tbody>
           </table>
         </Card>
-        </CardList>
-      </Wrapper>
+      </>
     )
   }
 }

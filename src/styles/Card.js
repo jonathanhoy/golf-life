@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import variables from './variables';
 
 const Card = styled.div`
-  display: inline-block;
   background: rgba(225,225,225,1);
   padding: 1rem;
   -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.65); 
   box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.65);
+  width: 100%;
   h3 {
     font-size: 1.25rem;
     margin: 0.5rem 0;
@@ -85,6 +85,7 @@ const CardList = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1.5rem;
+  margin: 0;
   @media (max-width: ${variables.sm}) {
     grid-template-columns: 1fr;
   }

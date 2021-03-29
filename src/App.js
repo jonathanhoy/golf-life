@@ -2,9 +2,8 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import LatestTourney from './components/LatestTourney';
+import Home from './components/Home';
 import PastTournaments from './components/PastTournaments';
-import Leaderboard from './components/Leaderboard';
 import variables from './styles/variables';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import styled from 'styled-components';
@@ -15,8 +14,7 @@ function App() {
       <Router>
         <Header />
         <Main>
-          <Route exact path="/" component={Leaderboard} />
-          <Route exact path="/" component={LatestTourney} />
+          <Route exact path="/" component={Home} />
           {/* <Route path="/players" component={Players} /> */}
           <Route exact path="/tournaments" component={PastTournaments} />
         </Main>
@@ -27,9 +25,9 @@ function App() {
 }
 
 const Main = styled.main`
-  margin-top: 120px;
+  margin-top: 104px;
   @media (max-width: ${variables.sm}) {
-    margin-top: 119px;
+    margin-top: 103px;
   }
 `;
 
