@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Card, CardHeading } from '../styles/Card';
 import { firebase, wins } from '../firebase';
 import { byWinPercentage } from '../sortingFunctions';
+import { Link } from 'react-router-dom';
 
 class Leaderboard extends Component {
   constructor() {
@@ -58,6 +59,7 @@ class Leaderboard extends Component {
               }
             </tbody>
           </table>
+          <Link to="/players">See more players <i className="fa fa-chevron-right"></i></Link>
         </Card>
       </>
     )

@@ -4,8 +4,7 @@ import variables from './variables';
 const Card = styled.div`
   background: rgba(225,225,225,1);
   padding: 1rem;
-  -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.65); 
-  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.65);
+  box-shadow: ${variables.boxshadow};
   width: 100%;
   height: 100%;
   h3 {
@@ -27,10 +26,16 @@ const Card = styled.div`
     color: ${variables.green};
     font-weight: 700;
     font-size: 1rem;
-    margin: 1rem 0 0.5rem 0;
+    margin: 1.25rem 0 0.25rem 0;
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     text-transform: uppercase;
+    i {
+      font-size: 0.75rem;
+      margin-left: 0.5rem;
+      /* color: red; */
+    }
   }
   table {
     margin: 0 auto;

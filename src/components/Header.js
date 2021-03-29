@@ -1,22 +1,60 @@
 import React from 'react';
 import variables from '../styles/variables';
 import Wrapper from '../styles/Wrapper';
+import Button from '../styles/Button';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      showNav: false,
+    }
+  }  
+
+  handleClick = () => {
+    console.log('i am click');
+    this.setState({
+      showNav: true,
+    })
+    if (this.state.showNav === false) {
+      this.setState({
+        showNav: true,
+      })
+    } else {
+      this.setState({
+        showNav: false,
+      })
+    }
+  }
+
+  handleClose = () => {
+    this.setState({
+      showNav: false,
+    })
+  }
+
   render() {
     return (
-      <StyledHeader>
+      <StyledHeader showNav={this.state.showNav}>
         <Wrapper>
-          <nav>
+          <div className="container">
             <h1>Golf Life 🏌🏻‍♂️</h1>
-            <div>
-              <Link to="/">Home</Link>
-              {/* <Link to="/players">Players</Link> */}
-              <Link to="/tournaments">Tournaments</Link>
-            </div>
-          </nav>
+            <Button className="mobile-nav-toggle" onClick={this.handleClick}>
+              <i className="fas fa-bars fa-fw"></i>
+              <i class="fas fa-times fa-fw"></i>
+            </Button>
+            <nav>
+              <div>
+                <Link onClick={this.handleClose} to="/">Home</Link>
+                <Link onClick={this.handleClose} to="/tournaments">Tournaments</Link>
+                <Link onClick={this.handleClose} to="/players">Players</Link>
+                <Link onClick={this.handleClose} to="/maps">Maps</Link>
+              </div>
+            </nav>
+          </div>
         </Wrapper>
       </StyledHeader>     
     )
@@ -25,23 +63,37 @@ class Header extends React.Component {
 
 const StyledHeader = styled.header`
   background: ${variables.white};
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.65); 
-  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.65);
+  box-shadow: ${variables.boxshadow};
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  h1 {
+    color: ${variables.green};
+    margin: 0;
+    font-size: 2.5rem;
+    font-family: ${variables.heading};
+    position: relative;
+    z-index: 10;
+  }
+  .mobile-nav-toggle {
+    .fa-bars {
+      display: ${props => props.showNav ? 'none' : 'block'};
+    }
+    .fa-times {
+      display: ${props => props.showNav ? 'block' : 'none'};
+    }
+  }
   nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    h1 {
-      color: ${variables.green};
-      margin: 0;
-      font-size: 2.5rem;
-      font-family: ${variables.heading};
-    }
     div {
       a {
         color: ${variables.green};
@@ -56,20 +108,27 @@ const StyledHeader = styled.header`
   @media (max-width: ${variables.sm}) {
     padding: 0.5rem 0;
     nav {
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-start;
+      display: ${props => props.showNav ? 'block' : 'none'};
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      box-shadow: ${variables.boxshadow};
       h1 {
         font-size: 2rem;
         margin-bottom: 1rem;
       }
       div {
         display: flex;
-        justify-content: flex-start;
-        width: 100%;
+        justify-content: flex-end;
+        align-items: flex-end;
+        flex-direction: column;
+        width: 95%;
+        margin: 0 auto;
+        padding: 4rem 0 1rem;
         a {
-          margin-left: 0;
-          margin-right: 1.5rem;
+          margin: 0.5rem 0;
         }
       }
     }

@@ -76,7 +76,7 @@ class LatestTourney extends Component {
               }
             </tbody>
           </table>
-          <Link to="/tournaments">See more tournaments</Link>
+          <Link to="/tournaments">See more tournaments <i className="fa fa-chevron-right"></i></Link>
         </Card>
       </>
     )

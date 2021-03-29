@@ -15,6 +15,9 @@ const variables = {
     // FONTS
     heading: "'Open Sans', sans-serif;",
     body: "'Inconsolata', monospace;",
+
+    // MISC
+    boxshadow: '0px 5px 10px 0px rgba(0,0,0,0.65);',
 }
 
 export default variables;

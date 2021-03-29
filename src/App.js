@@ -4,6 +4,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import PastTournaments from './components/PastTournaments';
+import Players from './components/Players';
+import Maps from './components/Maps';
 import variables from './styles/variables';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import styled from 'styled-components';
@@ -17,8 +19,9 @@ function App() {
           <Header />
           <Main>
             <Route exact path="/" component={Home} />
-            {/* <Route path="/players" component={Players} /> */}
+            <Route exact path="/players" component={Players} />
             <Route exact path="/tournaments" component={PastTournaments} />
+            <Route exact path="/maps" component={Maps} />
           </Main>
           <Footer />
         </ScrollToTop>
@@ -28,10 +31,7 @@ function App() {
 }
 
 const Main = styled.main`
-  margin-top: 88px;
-  @media (max-width: ${variables.sm}) {
-    margin-top: 103px;
-  }
+  margin-top: 72px;
 `;
 
 export default App;
