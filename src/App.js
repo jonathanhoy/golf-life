@@ -25,7 +25,7 @@ function App() {
 }
 
 const Main = styled.main`
-  margin-top: 104px;
+  margin-top: 88px;
   @media (max-width: ${variables.sm}) {
     margin-top: 103px;
   }

@@ -6,7 +6,7 @@ import PageHeading from '../styles/PageHeading';
 import { firebase, accolades_meta, ccolades_best_differential } from '../firebase';
 import { byParDifferential } from '../sortingFunctions';
 
-import moment from 'moment';
+import moment, { normalizeUnits } from 'moment';
 
 class Accolades extends React.Component {
   constructor() {
@@ -44,23 +44,37 @@ class Accolades extends React.Component {
       <>
         <Card>
           <CardHeading>Accolades</CardHeading>
-          <h3>Best Course</h3>
-          {
-            this.state.course.map((item) => {
-              return (
-                <>
-                  <p>{item.player}</p>
-                  <p>🏆</p>
-                  <p>{item.map}</p>
-                  <p>{item.score} ({item.differential})</p>
-                </>
-              )
-            })
-          }
+          <div>
+            <h3>Best Course</h3>
+            <Course>
+              {
+                this.state.course.map((item) => {
+                  return (
+                    <li>
+                      <p>{item.player}</p>
+                      <p>🏆</p>
+                      <p>{item.map}</p>
+                      <p>{item.score} ({item.differential})</p>
+                    </li>
+                  )
+                })
+              }
+
+            </Course>
+          </div>
+          <div>
+            <h3>Best Differential</h3>
+          </div>
         </Card>
       </>
     )
   }
 }
+
+const Course = styled.ul`
+  list-style: none;
+  padding: 0;
+  display: flex;
+`;
 
 export default Accolades;

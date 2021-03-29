@@ -39,7 +39,7 @@ const Grid = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1.5rem;
-  padding: 3rem 0;
+  padding-top: 2rem;
   .leaderboard {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
@@ -50,6 +50,10 @@ const Grid = styled.section`
   }
   @media (max-width: ${variables.sm}) {
     grid-template-columns: 1fr;
+    .accolades {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
   }
 `;
 

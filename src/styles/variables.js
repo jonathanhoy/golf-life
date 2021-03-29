@@ -1,7 +1,7 @@
 const variables = {
     // COLORS
     green: '#2E8B57',
-    belowPar: '#3CB371',
+    belowPar: 'green',
     abovePar: '#B22222',
     white: '#fff',
     black: '#000',

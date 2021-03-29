@@ -25,7 +25,7 @@ class Header extends React.Component {
 
 const StyledHeader = styled.header`
   background: ${variables.white};
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   position: fixed;
   top: 0;
   left: 0;
