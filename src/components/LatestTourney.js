@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Card } from '../styles/Card';
-import PageHeading from '../styles/PageHeading';
+import { Card, CardHeading } from '../styles/Card';
 import { firebase, meta } from '../firebase';
 import { byLatestTourney } from '../sortingFunctions';
 
@@ -29,8 +28,8 @@ class LatestTourney extends Component {
   render() {
     return (
       <>
-        <PageHeading>Latest Result</PageHeading>
         <Card>
+          <CardHeading>Latest Result</CardHeading>
           <h3>Tournament #{this.state.meta.tourney_id}</h3>
           <p>{this.state.meta.date}</p>
           <table className="tournament">

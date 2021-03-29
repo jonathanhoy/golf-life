@@ -7,6 +7,7 @@ const Card = styled.div`
   -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.65); 
   box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.65);
   width: 100%;
+  height: 100%;
   h3 {
     font-size: 1.25rem;
     margin: 0.5rem 0;
@@ -91,4 +92,13 @@ const CardList = styled.ul`
   }
 `;
 
-export { Card, CardList };
+const CardHeading = styled.h2`
+  color: ${variables.black};
+  font-family: ${variables.body};
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+`;
+
+export { Card, CardList, CardHeading };

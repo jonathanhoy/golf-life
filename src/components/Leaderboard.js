@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Card } from '../styles/Card';
-import PageHeading from '../styles/PageHeading';
+import { Card, CardHeading } from '../styles/Card';
 import { firebase, wins } from '../firebase';
 import { byWinPercentage } from '../sortingFunctions';
 
@@ -35,32 +34,31 @@ class Leaderboard extends Component {
   render() {
     return (
       <>
-        <PageHeading>Wins</PageHeading>
-          <Card>
-          <h3>Lifetime Standings</h3>
-            <table className="wins">
-              <tbody>
-                <tr>
-                  <th>Player</th>
-                  <th>Wins</th>
-                  <th>Tournaments played</th>
-                  <th>Win %</th>
-                </tr>
-                {
-                  this.state.wins.map((player) => {
-                    return (
-                      <tr key={player.player}>
-                        <td>{player.player}</td>
-                        <td>{player.total_wins}</td>
-                        <td>{player.games_played}</td>
-                        <td>{(player.win_rate).toFixed(3)}</td>
-                      </tr>
-                    )
-                  })
-                }
-              </tbody>
-            </table>
-          </Card>
+        <Card>
+          <CardHeading>Lifetime Standings</CardHeading>
+          <table className="wins">
+            <tbody>
+              <tr>
+                <th>Player</th>
+                <th>Wins</th>
+                <th>Tournaments played</th>
+                <th>Win %</th>
+              </tr>
+              {
+                this.state.wins.map((player) => {
+                  return (
+                    <tr key={player.player}>
+                      <td>{player.player}</td>
+                      <td>{player.total_wins}</td>
+                      <td>{player.games_played}</td>
+                      <td>{(player.win_rate).toFixed(3)}</td>
+                    </tr>
+                  )
+                })
+              }
+            </tbody>
+          </table>
+        </Card>
       </>
     )
   }
