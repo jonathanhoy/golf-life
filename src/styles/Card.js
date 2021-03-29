@@ -94,11 +94,10 @@ const CardList = styled.ul`
 
 const CardHeading = styled.h2`
   color: ${variables.black};
-  font-family: ${variables.body};
+  font-family: ${variables.heading};
   font-size: 2rem;
   margin-top: 0;
   margin-bottom: 2rem;
-  text-transform: uppercase;
 `;
 
 export { Card, CardList, CardHeading };
