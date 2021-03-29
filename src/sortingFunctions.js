@@ -31,4 +31,18 @@ const byWinPercentage = ( a, b ) => {
   }
 }
 
-export { byLatestTourney, byLatestTourneyAndMapCount, byWinPercentage };
+const byParDifferential = ( a, b ) => {
+  if ( a.differential < b.differential ){
+    return -1;
+  }
+  if ( a.differential > b.differential ){
+    return 1;
+  }
+}
+
+export {
+  byLatestTourney,
+  byLatestTourneyAndMapCount,
+  byWinPercentage,
+  byParDifferential
+};
