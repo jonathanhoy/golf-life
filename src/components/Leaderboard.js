@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Card, CardList } from '../styles/Card';
-import Wrapper from '../styles/Wrapper';
-import PageHeading from '../styles/PageHeading';
+import { Card, CardHeading } from '../styles/Card';
 import { firebase, wins } from '../firebase';
 import { byWinPercentage } from '../sortingFunctions';
+import { Link } from 'react-router-dom';
 
 class Leaderboard extends Component {
   constructor() {
@@ -17,7 +16,6 @@ class Leaderboard extends Component {
     const dbRef = firebase.database().ref(`${wins}`);
     dbRef.on('value', (response) => {
       const data = response.val();
-      console.log(data);
       // Sort data to get latest tournament
       const sortedData = data.sort(byWinPercentage);
       let newWins = {};
@@ -36,37 +34,34 @@ class Leaderboard extends Component {
 
   render() {
     return (
-      <Wrapper>
-        <PageHeading>Wins</PageHeading>
-        <CardList>
-          <Card>
-          <h3>Lifetime Standings</h3>
-            <table className="wins">
-              <tbody>
-                <tr>
-                  <th>Player</th>
-                  <th>Wins</th>
-                  <th>Tournaments played</th>
-                  <th>Win %</th>
-                </tr>
-                {
-                  this.state.wins.map((player) => {
-                    return (
-                      <tr>
-                        <td>{player.player}</td>
-                        <td>{player.total_wins}</td>
-                        <td>{player.games_played}</td>
-                        <td>{(player.win_rate).toFixed(3)}</td>
-                      </tr>
-                    )
-                  })
-                }
-                
-              </tbody>
-            </table>
-          </Card>
-        </CardList>
-      </Wrapper>
+      <>
+        <Card>
+          <CardHeading>Standings</CardHeading>
+          <table className="wins">
+            <tbody>
+              <tr>
+                <th>Player</th>
+                <th>Wins</th>
+                <th>Tournaments played</th>
+                <th>Win %</th>
+              </tr>
+              {
+                this.state.wins.map((player) => {
+                  return (
+                    <tr key={player.player}>
+                      <td>{player.player}</td>
+                      <td>{player.total_wins}</td>
+                      <td>{player.games_played}</td>
+                      <td>{(player.win_rate).toFixed(3)}</td>
+                    </tr>
+                  )
+                })
+              }
+            </tbody>
+          </table>
+          <Link to="/players">See more players <i className="fa fa-chevron-right"></i></Link>
+        </Card>
+      </>
     )
   }
 }

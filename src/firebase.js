@@ -15,5 +15,14 @@ firebase.initializeApp(config);
 const records = '1mDdt2Y3_Yb-0ByOOQhbiAJ1rsv0E7ct41vRdyoBE64s/match_record/';
 const meta = '1mDdt2Y3_Yb-0ByOOQhbiAJ1rsv0E7ct41vRdyoBE64s/tourney_meta/';
 const wins = '1mDdt2Y3_Yb-0ByOOQhbiAJ1rsv0E7ct41vRdyoBE64s/leaderboard/';
+const accolades_meta = '1mDdt2Y3_Yb-0ByOOQhbiAJ1rsv0E7ct41vRdyoBE64s/accolades_meta/';
+const accolades_best_differential = '1mDdt2Y3_Yb-0ByOOQhbiAJ1rsv0E7ct41vRdyoBE64s/accolades_best_differential/';
 
-export {firebase, records, meta, wins};
+export {
+    firebase,
+    records,
+    meta,
+    wins,
+    accolades_best_differential,
+    accolades_meta
+};

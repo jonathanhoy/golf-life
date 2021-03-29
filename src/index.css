@@ -9,6 +9,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 ul {
   padding: 0;
 }
@@ -28,4 +32,8 @@ code {
   .show-for-small-vertical {
     display: none;
   }
+}
+
+main {
+  margin-top: 72px;
 }

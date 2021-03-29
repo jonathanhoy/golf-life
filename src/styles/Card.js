@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import variables from './variables';
 
 const Card = styled.div`
-  display: inline-block;
   background: rgba(225,225,225,1);
   padding: 1rem;
-  -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.65); 
-  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.65);
+  box-shadow: ${variables.boxshadow};
+  width: 100%;
+  height: 100%;
   h3 {
     font-size: 1.25rem;
     margin: 0.5rem 0;
@@ -20,6 +20,22 @@ const Card = styled.div`
     font-weight: 700;
     font-size: 1rem;
     margin: 0.5rem 0;
+  }
+  a {
+    font-family: ${variables.body};
+    color: ${variables.green};
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 1.25rem 0 0.25rem 0;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    text-transform: uppercase;
+    i {
+      font-size: 0.75rem;
+      margin-left: 0.5rem;
+      /* color: red; */
+    }
   }
   table {
     margin: 0 auto;
@@ -85,9 +101,18 @@ const CardList = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1.5rem;
+  margin: 0;
   @media (max-width: ${variables.sm}) {
     grid-template-columns: 1fr;
   }
 `;
 
-export { Card, CardList };
+const CardHeading = styled.h2`
+  color: ${variables.black};
+  font-family: ${variables.heading};
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+`;
+
+export { Card, CardList, CardHeading };

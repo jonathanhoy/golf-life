@@ -1,7 +1,7 @@
 const variables = {
     // COLORS
     green: '#2E8B57',
-    belowPar: '#3CB371',
+    belowPar: 'green',
     abovePar: '#B22222',
     white: '#fff',
     black: '#000',
@@ -15,6 +15,9 @@ const variables = {
     // FONTS
     heading: "'Open Sans', sans-serif;",
     body: "'Inconsolata', monospace;",
+
+    // MISC
+    boxshadow: '0px 5px 10px 0px rgba(0,0,0,0.65);',
 }
 
 export default variables;

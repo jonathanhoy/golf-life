@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Card, CardList } from '../styles/Card';
-import Wrapper from '../styles/Wrapper';
-import PageHeading from '../styles/PageHeading';
+import { Card, CardHeading } from '../styles/Card';
 import { firebase, meta } from '../firebase';
 import { byLatestTourney } from '../sortingFunctions';
+import { Link } from 'react-router-dom';
 
 class LatestTourney extends Component {
   constructor() {
@@ -29,10 +28,9 @@ class LatestTourney extends Component {
 
   render() {
     return (
-      <Wrapper>
-        <PageHeading>Latest Result</PageHeading>
-        <CardList>
+      <>
         <Card>
+          <CardHeading>Latest Result</CardHeading>
           <h3>Tournament #{this.state.meta.tourney_id}</h3>
           <p>{this.state.meta.date}</p>
           <table className="tournament">
@@ -78,9 +76,9 @@ class LatestTourney extends Component {
               }
             </tbody>
           </table>
+          <Link to="/tournaments">See more tournaments <i className="fa fa-chevron-right"></i></Link>
         </Card>
-        </CardList>
-      </Wrapper>
+      </>
     )
   }
 }
