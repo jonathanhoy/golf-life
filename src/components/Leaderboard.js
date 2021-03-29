@@ -35,7 +35,7 @@ class Leaderboard extends Component {
     return (
       <>
         <Card>
-          <CardHeading>Lifetime Standings</CardHeading>
+          <CardHeading>Standings</CardHeading>
           <table className="wins">
             <tbody>
               <tr>

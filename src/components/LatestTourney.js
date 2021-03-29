@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Card, CardHeading } from '../styles/Card';
 import { firebase, meta } from '../firebase';
 import { byLatestTourney } from '../sortingFunctions';
+import { Link } from 'react-router-dom';
 
 class LatestTourney extends Component {
   constructor() {
@@ -75,6 +76,7 @@ class LatestTourney extends Component {
               }
             </tbody>
           </table>
+          <Link to="/tournaments">See more tournaments</Link>
         </Card>
       </>
     )

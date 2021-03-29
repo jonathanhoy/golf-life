@@ -22,6 +22,16 @@ const Card = styled.div`
     font-size: 1rem;
     margin: 0.5rem 0;
   }
+  a {
+    font-family: ${variables.body};
+    color: ${variables.green};
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 1rem 0 0.5rem 0;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+  }
   table {
     margin: 0 auto;
     width: 100%;
