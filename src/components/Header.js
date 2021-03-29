@@ -15,7 +15,6 @@ class Header extends React.Component {
   }  
 
   handleClick = () => {
-    console.log('i am click');
     this.setState({
       showNav: true,
     })
@@ -44,7 +43,7 @@ class Header extends React.Component {
             <h1>Golf Life 🏌🏻‍♂️</h1>
             <Button className="mobile-nav-toggle" onClick={this.handleClick}>
               <i className="fas fa-bars fa-fw"></i>
-              <i class="fas fa-times fa-fw"></i>
+              <i className="fas fa-times fa-fw"></i>
             </Button>
             <nav>
               <div>
@@ -108,13 +107,14 @@ const StyledHeader = styled.header`
   @media (max-width: ${variables.sm}) {
     padding: 0.5rem 0;
     nav {
-      display: ${props => props.showNav ? 'block' : 'none'};
       position: absolute;
-      top: 0;
+      top: ${props => props.showNav ? '0' : '-180px'};
+      opacity: ${props => (props.showNav === true ? '1' : '0')};
       left: 0;
       right: 0;
       background: white;
       box-shadow: ${variables.boxshadow};
+      transition: all 0.3s ease-in-out;
       h1 {
         font-size: 2rem;
         margin-bottom: 1rem;

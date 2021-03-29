@@ -33,3 +33,7 @@ code {
     display: none;
   }
 }
+
+main {
+  margin-top: 72px;
+}

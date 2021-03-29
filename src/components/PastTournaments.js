@@ -40,7 +40,7 @@ class PastTournaments extends Component {
         <CardList>
           {(this.state.meta).map((tournament) => {
               return (
-                <Card>
+                <Card key={tournament.tourney_id}>
                   <h3>Tournament #{tournament.tourney_id}</h3>
                   <p>{tournament.date}</p>
                   <table className="tournament">

@@ -51,10 +51,10 @@ class Accolades extends React.Component {
               {
                 this.state.course.map((item) => {
                   return (
-                    <li className="course-item">
+                    <li className="course-item" key={item.data}>
                       <p className="course-item-player">{item.player}</p>
                       <p className="course-item-date">{item.date}</p>
-                      <img className="course-item-image" src={`./assets/maps/${item.image}.png`}></img>
+                      <img className="course-item-image" src={`./assets/maps/${item.image}.png`} alt={`${item.map} Course`}></img>
                       <p className="course-item-map">{item.map}</p>
                       <p className="course-item-score">{item.score} ({item.differential})</p>
                     </li>
