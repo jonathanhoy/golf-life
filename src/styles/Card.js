@@ -102,6 +102,7 @@ const Card = styled.div`
       }
       th {
         .button-group {
+          white-space: nowrap;
           button {
             background: none;
             border: none;
