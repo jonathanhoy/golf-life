@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Card, CardList } from '../styles/Card';
 import Wrapper from '../styles/Wrapper';
 import PageHeading from '../styles/PageHeading';
+import BodyText from '../styles/BodyText';
 import { firebase, meta } from '../firebase';
 import { byLatestTourney } from '../helper-functions/sortingFunctions';
 
@@ -37,6 +38,7 @@ class PastTournaments extends Component {
     return (
       <Wrapper>
         <PageHeading>History</PageHeading>
+        <BodyText>A record of all past tournaments. Tournaments are cumulative scores over three randomly picked courses.</BodyText>
         <CardList>
           {(this.state.meta).map((tournament) => {
               return (

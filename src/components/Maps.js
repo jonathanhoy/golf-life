@@ -89,7 +89,7 @@ class Maps extends Component {
     return (
       <Wrapper>
         <PageHeading>Map Statistics</PageHeading>
-        <BodyText>This page provides statistics for each map. Click the buttons under each heading to sort the table accordingly. Average Differential is the default sorting method and is the best indicator for determining the most difficult maps. <span className="show-for-small-vertical">Rotate your phone or view on a desktop for more statistics.</span></BodyText>
+        <BodyText>This page provides statistics for each map. Click the buttons under each heading to sort the table accordingly. Average Differential is the default sorting method. <span className="show-for-small-vertical">Rotate your phone or view on a desktop for more statistics.</span></BodyText>
         <Card>
           <table className="maps">
             <tbody>
@@ -97,7 +97,7 @@ class Maps extends Component {
                 <th><span>Map</span></th>
                 <th><span>Par</span></th>
                 <th><span>Avg. Score</span></th>
-                <th><span className="hide-for-small-vertical">Avg. Differential</span><span className="show-for-small-vertical">Avg. Diff</span></th>
+                <th><span className="hide-for-small">Avg. Differential</span><span className="show-for-small">Avg. Diff</span></th>
                 <th><span>Lowest Score</span></th>
                 <th><span>Highest Score</span></th>
                 <th><span>Rounds Played</span></th>
