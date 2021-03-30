@@ -6,7 +6,7 @@ const Button = styled.button`
   box-shadow: none;
   border: none;
   position: relative;
-  z-index: 10;
+  z-index: 5;
   padding: 0;
   i {
     color: ${variables.green};
