@@ -25,7 +25,7 @@ const SortButton = styled.button`
   padding: 0;
   height: 1.5rem;
   width: 1.5rem;
-  border-radius: 2px;
+  border-radius: 50%;
   i {
     font-size: 1.5rem;
     pointer-events: none;
