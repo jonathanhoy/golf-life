@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Card, CardHeading } from '../styles/Card';
 import { firebase, accolades_meta } from '../firebase';
-import { byParDifferential } from '../sortingFunctions';
+import { byParDifferential } from '../helper-functions/sortingFunctions';
 import { Link } from 'react-router-dom';
 
 import moment from 'moment';

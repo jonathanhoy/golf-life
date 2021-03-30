@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardHeading } from '../styles/Card';
 import { firebase, meta } from '../firebase';
-import { byLatestTourney } from '../sortingFunctions';
+import { byLatestTourney } from '../helper-functions/sortingFunctions';
 import { Link } from 'react-router-dom';
 
 class LatestTourney extends Component {

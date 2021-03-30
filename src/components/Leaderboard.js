@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardHeading } from '../styles/Card';
 import { firebase, wins } from '../firebase';
-import { byWinPercentage } from '../sortingFunctions';
+import { byWinPercentage } from '../helper-functions/sortingFunctions';
 import { Link } from 'react-router-dom';
 
 class Leaderboard extends Component {

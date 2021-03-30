@@ -34,6 +34,18 @@ code {
   }
 }
 
+@media (max-width: 767px) {
+  .hide-for-small {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .show-for-small {
+    display: none;
+  }
+}
+
 main {
   margin-top: 72px;
 }

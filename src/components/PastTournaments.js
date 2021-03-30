@@ -3,7 +3,7 @@ import { Card, CardList } from '../styles/Card';
 import Wrapper from '../styles/Wrapper';
 import PageHeading from '../styles/PageHeading';
 import { firebase, meta } from '../firebase';
-import { byLatestTourney } from '../sortingFunctions';
+import { byLatestTourney } from '../helper-functions/sortingFunctions';
 
 class PastTournaments extends Component {
   constructor() {
