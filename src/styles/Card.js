@@ -134,6 +134,9 @@ const Card = styled.div`
           td:nth-child(7) {
             display: none;
           }
+          th:first-of-type, th:not(:first-of-type) {
+            width: 25%;
+          }
         }
       }
     }
