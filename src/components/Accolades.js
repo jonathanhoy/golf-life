@@ -67,7 +67,7 @@ class Accolades extends React.Component {
                 })
               }
             </Course>
-            <Link to="/maps">See more maps <i className="fa fa-chevron-right"></i></Link>
+            <Link to="/maps">See more maps <i className="fa fa-caret-right"></i></Link>
           </AccoladesContainer>
           <AccoladesContainer>
             {/* <h3>Best Differential</h3> */}

@@ -32,7 +32,7 @@ const Card = styled.div`
     align-items: center;
     text-transform: uppercase;
     i {
-      font-size: 0.75rem;
+      font-size: 1rem;
       margin-left: 0.5rem;
     }
   }

@@ -60,7 +60,7 @@ class Leaderboard extends Component {
               }
             </tbody>
           </Table>
-          <Link to="/players">See more players <i className="fa fa-chevron-right"></i></Link>
+          <Link to="/players">See more players <i className="fa fa-caret-right"></i></Link>
         </Card>
       </>
     )
