@@ -92,7 +92,7 @@ class Maps extends Component {
   render() {
     return (
       <Wrapper>
-        <PageHeading>Map Statistics</PageHeading>
+        <PageHeading>Maps Overview</PageHeading>
         <BodyText>Click the buttons under each heading to sort the table accordingly. Average Differential is the default sorting method. <span className="show-for-small-vertical">Rotate your phone or view on a desktop for more statistics.</span></BodyText>
         <Card>
           <Table className="maps">

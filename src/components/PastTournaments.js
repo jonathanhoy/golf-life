@@ -38,8 +38,8 @@ class PastTournaments extends Component {
   render() {
     return (
       <Wrapper>
-        <PageHeading>History</PageHeading>
-        <BodyText>A record of all past tournaments. Tournaments are cumulative scores over three randomly picked courses.</BodyText>
+        <PageHeading>Results</PageHeading>
+        <BodyText>Tournaments are cumulative scores over three randomly picked courses.</BodyText>
         <CardList>
           {(this.state.meta).map((tournament) => {
               return (
