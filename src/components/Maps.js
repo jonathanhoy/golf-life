@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardList } from '../styles/Card';
+import { Card } from '../styles/Card';
 import Wrapper from '../styles/Wrapper';
 import PageHeading from '../styles/PageHeading';
 import BodyText from '../styles/BodyText';
@@ -33,13 +33,14 @@ class Maps extends Component {
       const sortedData = data.sort(byAvgDifferentialIncreasing);
       let newMeta = [];
       newMeta = [...sortedData];
-      // eslint-disable-next-line
       const cleanedMeta = newMeta
+      // eslint-disable-next-line
       .filter((course) => {
         if (course !== undefined) {
           return course;
         }
       })
+      // eslint-disable-next-line
       .map((course) => {
         if (typeof course.avg_differential === 'number' && typeof course.avg_score === 'number') {
           course.avg_differential = course.avg_differential.toFixed(2);
