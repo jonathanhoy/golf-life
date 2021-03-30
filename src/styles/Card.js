@@ -91,6 +91,52 @@ const Card = styled.div`
     }
     &.tournament {
     }
+    &.maps {
+      tr:nth-child(1) {
+        padding-bottom: 0;
+      }
+      tr:nth-child(2) {
+        th {
+          padding-top: 0;
+        }
+      }
+      th {
+        .button-group {
+          button {
+            background: none;
+            border: none;
+            position: relative;
+            z-index: 10;
+            i {
+              color: ${variables.white};
+              font-size: 1.5rem;
+              pointer-events: none;
+            }
+          }
+        }
+      }
+      th:first-of-type {
+        width: 15%;
+      }
+      th:not(:first-of-type) {
+        width: calc(85% / 6); 
+      }
+      td:last-of-type {
+        font-weight: 400;
+      }
+      @media (max-width: ${variables.smVertical}) {
+        tr {
+          th:nth-child(5),
+          th:nth-child(6),
+          th:nth-child(7),
+          td:nth-child(5),
+          td:nth-child(6),
+          td:nth-child(7) {
+            display: none;
+          }
+        }
+      }
+    }
   }
   @media (max-width: ${variables.smVertical}) {
 
