@@ -106,7 +106,7 @@ const Card = styled.div`
             background: none;
             border: none;
             position: relative;
-            z-index: 10;
+            z-index: 5;
             i {
               color: ${variables.white};
               font-size: 1.5rem;
