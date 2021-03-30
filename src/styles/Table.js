@@ -67,17 +67,20 @@ const Table = styled.table`
     th {
       .button-group {
         white-space: nowrap;
-        button {
+        /* button {
           background: none;
           border: none;
           position: relative;
           z-index: 5;
+          &[data-active="true"] {
+            background: red;
+          }
           i {
             color: ${variables.white};
             font-size: 1.5rem;
             pointer-events: none;
           }
-        }
+        } */
       }
     }
     th:first-of-type {

@@ -1,7 +1,7 @@
 import React from 'react';
 import variables from '../styles/variables';
 import Wrapper from '../styles/Wrapper';
-import Button from '../styles/Button';
+import { Button } from '../styles/Button';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 

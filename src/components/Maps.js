@@ -4,6 +4,7 @@ import Table from '../styles/Table';
 import Wrapper from '../styles/Wrapper';
 import PageHeading from '../styles/PageHeading';
 import BodyText from '../styles/BodyText';
+import { SortButton } from '../styles/Button';
 import { firebase, maps } from '../firebase';
 import { 
   byAvgDifferentialIncreasing, 
@@ -23,7 +24,7 @@ class Maps extends Component {
     super();
     this.state = {
       meta: [],
-      activeSort: 'byAvgDifferentialIncreasing',
+      active: 'byAvgDifferentialIncreasing',
     }
   }
 
@@ -84,6 +85,7 @@ class Maps extends Component {
     newSortedArr = temp;
     this.setState({
       meta: newSortedArr,
+      active: id,
     })
   }
 
@@ -91,7 +93,7 @@ class Maps extends Component {
     return (
       <Wrapper>
         <PageHeading>Map Statistics</PageHeading>
-        <BodyText>This page provides statistics for each map. Click the buttons under each heading to sort the table accordingly. Average Differential is the default sorting method. <span className="show-for-small-vertical">Rotate your phone or view on a desktop for more statistics.</span></BodyText>
+        <BodyText>Click the buttons under each heading to sort the table accordingly. Average Differential is the default sorting method. <span className="show-for-small-vertical">Rotate your phone or view on a desktop for more statistics.</span></BodyText>
         <Card>
           <Table className="maps">
             <tbody>
@@ -108,32 +110,32 @@ class Maps extends Component {
                 <th></th>
                 <th>
                   <div className="button-group">
-                    <button id="byParDecreasing" onClick={this.handleClick}><i className="fas fa-caret-up "></i></button>
-                    <button id="byParIncreasing" onClick={this.handleClick}><i className="fas fa-caret-down "></i></button>
+                    <SortButton id="byParDecreasing" active={this.state.active} onClick={this.handleClick}><i className="fas fa-caret-up "></i></SortButton>
+                    <SortButton id="byParIncreasing" active={this.state.active} onClick={this.handleClick}><i className="fas fa-caret-down "></i></SortButton>
                   </div>
                 </th>
                 <th>
                   <div className="button-group">
-                    <button id="byAvgScoreDecreasing" onClick={this.handleClick}><i className="fas fa-caret-up "></i></button>
-                    <button id="byAvgScoreIncreasing" onClick={this.handleClick}><i className="fas fa-caret-down "></i></button>
+                    <SortButton id="byAvgScoreDecreasing" active={this.state.active} onClick={this.handleClick}><i className="fas fa-caret-up "></i></SortButton>
+                    <SortButton id="byAvgScoreIncreasing" active={this.state.active} onClick={this.handleClick}><i className="fas fa-caret-down "></i></SortButton>
                   </div>
                 </th>
                 <th>
                     <div className="button-group">
-                      <button id="byAvgDifferentialDecreasing" onClick={this.handleClick}><i className="fas fa-caret-up "></i></button>
-                      <button id="byAvgDifferentialIncreasing" onClick={this.handleClick}><i className="fas fa-caret-down "></i></button>
+                      <SortButton id="byAvgDifferentialDecreasing" active={this.state.active} onClick={this.handleClick}><i className="fas fa-caret-up "></i></SortButton>
+                      <SortButton id="byAvgDifferentialIncreasing" active={this.state.active} onClick={this.handleClick}><i className="fas fa-caret-down "></i></SortButton>
                     </div>
                 </th>
                 <th>
                     <div className="button-group">
-                      <button id="byLowestScoreDecreasing" onClick={this.handleClick}><i className="fas fa-caret-up "></i></button>
-                      <button id="byLowestScoreIncreasing" onClick={this.handleClick}><i className="fas fa-caret-down "></i></button>
+                      <SortButton id="byLowestScoreDecreasing" active={this.state.active} onClick={this.handleClick}><i className="fas fa-caret-up "></i></SortButton>
+                      <SortButton id="byLowestScoreIncreasing" active={this.state.active} onClick={this.handleClick}><i className="fas fa-caret-down "></i></SortButton>
                     </div>
                 </th>
                 <th>
                   <div className="button-group">
-                    <button id="byHighestScoreDecreasing" onClick={this.handleClick}><i className="fas fa-caret-up "></i></button>
-                    <button id="byHighestScoreIncreasing" onClick={this.handleClick}><i className="fas fa-caret-down "></i></button>
+                    <SortButton id="byHighestScoreDecreasing" active={this.state.active} onClick={this.handleClick}><i className="fas fa-caret-up "></i></SortButton>
+                    <SortButton id="byHighestScoreIncreasing" active={this.state.active} onClick={this.handleClick}><i className="fas fa-caret-down "></i></SortButton>
                   </div>
                 </th>
                 <th></th>

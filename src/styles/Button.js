@@ -17,4 +17,20 @@ const Button = styled.button`
   }
 `;
 
-export default Button;
+const SortButton = styled.button`
+  background: ${props => props.id === props.active ? variables.white : 'none'};
+  border: none;
+  position: relative;
+  z-index: 5;
+  padding: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 2px;
+  i {
+    font-size: 1.5rem;
+    pointer-events: none;
+    color: ${props => props.id === props.active ? variables.green : variables.white};
+  }
+`;
+
+export { Button, SortButton };
