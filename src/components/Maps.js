@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card } from '../styles/Card';
+import Table from '../styles/Table';
 import Wrapper from '../styles/Wrapper';
 import PageHeading from '../styles/PageHeading';
 import BodyText from '../styles/BodyText';
@@ -21,7 +22,8 @@ class Maps extends Component {
   constructor() {
     super();
     this.state = {
-      meta: []
+      meta: [],
+      activeSort: 'byAvgDifferentialIncreasing',
     }
   }
 
@@ -91,7 +93,7 @@ class Maps extends Component {
         <PageHeading>Map Statistics</PageHeading>
         <BodyText>This page provides statistics for each map. Click the buttons under each heading to sort the table accordingly. Average Differential is the default sorting method. <span className="show-for-small-vertical">Rotate your phone or view on a desktop for more statistics.</span></BodyText>
         <Card>
-          <table className="maps">
+          <Table className="maps">
             <tbody>
               <tr>
                 <th><span>Map</span></th>
@@ -152,7 +154,7 @@ class Maps extends Component {
                 })
               }
             </tbody>
-          </table>
+          </Table>
         </Card>
       </Wrapper>
     )

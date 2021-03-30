@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardList } from '../styles/Card';
+import Table from '../styles/Table';
 import Wrapper from '../styles/Wrapper';
 import PageHeading from '../styles/PageHeading';
 import BodyText from '../styles/BodyText';
@@ -45,7 +46,7 @@ class PastTournaments extends Component {
                 <Card key={tournament.tourney_id}>
                   <h3>Tournament #{tournament.tourney_id}</h3>
                   <p>{tournament.date}</p>
-                  <table className="tournament">
+                  <Table className="tournament">
                     <tbody>
                       <tr>
                         <th>Player</th>
@@ -87,7 +88,7 @@ class PastTournaments extends Component {
                         )
                       }
                     </tbody>
-                  </table>
+                  </Table>
                 </Card>
               )
           })}

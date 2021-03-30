@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardHeading } from '../styles/Card';
+import Table from '../styles/Table';
 import { firebase, meta } from '../firebase';
 import { byLatestTourney } from '../helper-functions/sortingFunctions';
 import { Link } from 'react-router-dom';
@@ -33,7 +34,7 @@ class LatestTourney extends Component {
           <CardHeading>Latest Result</CardHeading>
           <h3>Tournament #{this.state.meta.tourney_id}</h3>
           <p>{this.state.meta.date}</p>
-          <table className="tournament">
+          <Table className="tournament">
             <tbody>
               <tr>
                 <th>Player</th>
@@ -75,7 +76,7 @@ class LatestTourney extends Component {
                 )
               }
             </tbody>
-          </table>
+          </Table>
           <Link to="/tournaments">See more tournaments <i className="fa fa-chevron-right"></i></Link>
         </Card>
       </>
