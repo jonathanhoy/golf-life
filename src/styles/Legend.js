@@ -38,7 +38,7 @@ const Legend = styled.div`
       }
     }
   }
-  @media (max-width: ${variables.sm}) {
+  @media (max-width: ${variables.smVertical}) {
     ul {
       grid-template-columns: 1fr;
       grid-gap: 0;
