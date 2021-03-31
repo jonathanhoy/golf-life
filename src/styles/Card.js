@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import variables from './variables';
 
 const Card = styled.div`
-  background: rgba(225,225,225,1);
+  background: ${variables.grey};
   padding: 1rem;
   box-shadow: ${variables.boxshadow};
   width: 100%;
