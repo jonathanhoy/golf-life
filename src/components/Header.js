@@ -126,11 +126,11 @@ const StyledHeader = styled.header`
         justify-content: flex-end;
         align-items: flex-end;
         flex-direction: column;
-        width: 95%;
+        width: 90%;
         margin: 0 auto;
         padding: 4rem 0 1rem;
         a {
-          margin: 0.5rem 0;
+          margin: 0.75rem 0;
         }
       }
     }
