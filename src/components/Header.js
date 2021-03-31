@@ -110,7 +110,7 @@ const StyledHeader = styled.header`
     padding: 0.5rem 0;
     nav {
       position: absolute;
-      top: ${props => props.showNav ? '0' : '-180px'};
+      top: ${props => props.showNav ? '0' : '-340px'};
       opacity: ${props => (props.showNav === true ? '1' : '0')};
       left: 0;
       right: 0;
