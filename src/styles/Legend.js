@@ -2,9 +2,6 @@ import styled from 'styled-components';
 import variables from '../styles/variables';
 
 const Legend = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
   position: relative;
   z-index: 15;
   margin-bottom: 1rem;
@@ -38,6 +35,15 @@ const Legend = styled.div`
           display: block;
           margin-bottom: 0.25rem;
         }
+      }
+    }
+  }
+  @media (max-width: ${variables.sm}) {
+    ul {
+      grid-template-columns: 1fr;
+      grid-gap: 0;
+      p {
+        margin: 0.25rem 0;
       }
     }
   }
