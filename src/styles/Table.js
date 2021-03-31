@@ -54,6 +54,10 @@ const Table = styled.table`
     }
   }
   &.tournament {
+    th {
+      width: 20%;
+      white-space: nowrap;
+    }
   }
   &.maps {
     tr:nth-child(1) {
