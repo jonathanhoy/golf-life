@@ -50,7 +50,7 @@ class Header extends React.Component {
                 <Link onClick={this.handleClose} to="/">Home</Link>
                 <Link onClick={this.handleClose} to="/tournaments">Results</Link>
                 <Link onClick={this.handleClose} to="/players">Players</Link>
-                <Link onClick={this.handleClose} to="/maps">Courses</Link>
+                <Link onClick={this.handleClose} to="/courses">Courses</Link>
                 <Link onClick={this.handleClose} to="/about">About</Link>
               </div>
             </nav>

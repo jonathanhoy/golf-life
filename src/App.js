@@ -20,7 +20,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/players" component={Players} />
             <Route exact path="/tournaments" component={PastTournaments} />
-            <Route exact path="/maps" component={Maps} />
+            <Route exact path="/courses" component={Maps} />
             <Route exact path="/about" component={About} />
           </main>
           <Footer />
