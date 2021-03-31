@@ -133,6 +133,24 @@ const byHighestScoreDecreasing = ( a, b ) => {
   }
 }
 
+const byRoundsPlayedIncreasing = ( a, b ) => {
+  if ( a.rounds_played < b.rounds_played ){
+    return -1;
+  }
+  if ( a.rounds_played > b.rounds_played ){
+    return 1;
+  }
+}
+
+const byRoundsPlayedDecreasing = ( a, b ) => {
+  if ( a.rounds_played > b.rounds_played ){
+    return -1;
+  }
+  if ( a.rounds_played < b.rounds_played ){
+    return 1;
+  }
+}
+
 export {
   byLatestTourney,
   byLatestTourneyAndMapCount,
@@ -148,4 +166,6 @@ export {
   byLowestScoreDecreasing,
   byHighestScoreIncreasing,
   byHighestScoreDecreasing,
+  byRoundsPlayedIncreasing,
+  byRoundsPlayedDecreasing,
 };

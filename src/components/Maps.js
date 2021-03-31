@@ -4,6 +4,7 @@ import Table from '../styles/Table';
 import Wrapper from '../styles/Wrapper';
 import PageHeading from '../styles/PageHeading';
 import BodyText from '../styles/BodyText';
+import Legend from '../styles/Legend';
 import { SortButton } from '../styles/Button';
 import { firebase, maps } from '../firebase';
 import { 
@@ -17,6 +18,8 @@ import {
   byLowestScoreDecreasing,
   byHighestScoreIncreasing,
   byHighestScoreDecreasing,
+  byRoundsPlayedIncreasing,
+  byRoundsPlayedDecreasing,
 } from '../helper-functions/sortingFunctions';
 
 class Maps extends Component {
@@ -25,6 +28,7 @@ class Maps extends Component {
     this.state = {
       meta: [],
       active: 'byAvgDifferentialIncreasing',
+      legendVisible: false,
     }
   }
 
@@ -81,6 +85,10 @@ class Maps extends Component {
       temp.sort(byHighestScoreIncreasing);
     } else if (id === "byHighestScoreDecreasing") {
       temp.sort(byHighestScoreDecreasing);
+    } else if (id === "byRoundsPlayedIncreasing") {
+      temp.sort(byRoundsPlayedIncreasing);
+    } else if (id === "byRoundsPlayedDecreasing") {
+      temp.sort(byRoundsPlayedDecreasing);
     }
     newSortedArr = temp;
     this.setState({
@@ -89,23 +97,54 @@ class Maps extends Component {
     })
   }
 
+  toggleLegend = () => {
+    this.setState(prevState => (
+      {
+        legendVisible: !prevState.legendVisible,
+      }
+    ))
+  }
+
   render() {
     return (
       <Wrapper>
         <PageHeading>Maps Overview</PageHeading>
         <BodyText>Click the buttons under each heading to sort the table accordingly. Average Differential is the default sorting method. <span className="show-for-small-vertical">Rotate your phone or view on a desktop for more statistics.</span></BodyText>
         <Card>
+          <Legend items={5} legendVisible={this.state.legendVisible}>
+            <button onClick={this.toggleLegend}>{this.state.legendVisible ? 'Hide legend' : 'Show legend' }</button>
+            <ul>
+              <li>
+                <p><span>Par</span> The total par for a map.</p>
+              </li>
+              <li>
+                <p><span>Average Score</span> The average score for all players for a map.</p>
+              </li>
+              <li>
+                <p><span>Average Differential</span> The average score relative to the par for a map.</p>
+              </li>
+              <li>
+                <p><span>Lowest/Highest Score</span> The single lowest/highest recorded score for a map.</p>
+              </li>
+              <li>
+                <p><span>Rounds Played</span> Aggregate number of times a map has been played.</p>
+              </li>
+            </ul>
+          </Legend>
           <Table className="maps">
-            <tbody>
+            <caption className="show-for-sr">Maps</caption>
+            <thead>
               <tr>
                 <th><span>Map</span></th>
                 <th><span>Par</span></th>
                 <th><span>Avg. Score</span></th>
-                <th><span className="hide-for-small">Avg. Differential</span><span className="show-for-small">Avg. Diff</span></th>
+                <th><span>Avg. Diff</span></th>
                 <th><span>Lowest Score</span></th>
                 <th><span>Highest Score</span></th>
                 <th><span>Rounds Played</span></th>
               </tr>
+            </thead>
+            <tbody>
               <tr>
                 <th></th>
                 <th>
@@ -121,16 +160,16 @@ class Maps extends Component {
                   </div>
                 </th>
                 <th>
-                    <div className="button-group">
-                      <SortButton id="byAvgDifferentialDecreasing" active={this.state.active} onClick={this.handleClick}><i className="fas fa-caret-up "></i></SortButton>
-                      <SortButton id="byAvgDifferentialIncreasing" active={this.state.active} onClick={this.handleClick}><i className="fas fa-caret-down "></i></SortButton>
-                    </div>
+                  <div className="button-group">
+                    <SortButton id="byAvgDifferentialDecreasing" active={this.state.active} onClick={this.handleClick}><i className="fas fa-caret-up "></i></SortButton>
+                    <SortButton id="byAvgDifferentialIncreasing" active={this.state.active} onClick={this.handleClick}><i className="fas fa-caret-down "></i></SortButton>
+                  </div>
                 </th>
                 <th>
-                    <div className="button-group">
-                      <SortButton id="byLowestScoreDecreasing" active={this.state.active} onClick={this.handleClick}><i className="fas fa-caret-up "></i></SortButton>
-                      <SortButton id="byLowestScoreIncreasing" active={this.state.active} onClick={this.handleClick}><i className="fas fa-caret-down "></i></SortButton>
-                    </div>
+                  <div className="button-group">
+                    <SortButton id="byLowestScoreDecreasing" active={this.state.active} onClick={this.handleClick}><i className="fas fa-caret-up "></i></SortButton>
+                    <SortButton id="byLowestScoreIncreasing" active={this.state.active} onClick={this.handleClick}><i className="fas fa-caret-down "></i></SortButton>
+                  </div>
                 </th>
                 <th>
                   <div className="button-group">
@@ -138,7 +177,12 @@ class Maps extends Component {
                     <SortButton id="byHighestScoreIncreasing" active={this.state.active} onClick={this.handleClick}><i className="fas fa-caret-down "></i></SortButton>
                   </div>
                 </th>
-                <th></th>
+                <th>
+                  <div className="button-group">
+                    <SortButton id="byRoundsPlayedDecreasing" onClick={this.handleClick}><i className="fas fa-caret-up "></i></SortButton>
+                    <SortButton id="byRoundsPlayedIncreasing" onClick={this.handleClick}><i className="fas fa-caret-down "></i></SortButton>
+                  </div>
+                </th>
               </tr>
               {
                 this.state.meta.map((course) => {

@@ -10,7 +10,7 @@ const Table = styled.table`
     background: ${variables.green};
   }
   tr:nth-child(2n+1) {
-    background: lightgrey;
+    background: ${variables.greyAlt};
   }
   th, td {
     padding: 8px 5px;

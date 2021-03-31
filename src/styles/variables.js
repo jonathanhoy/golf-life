@@ -5,6 +5,8 @@ const variables = {
     abovePar: '#B22222',
     white: '#fff',
     black: '#000',
+    grey: 'rgba(225,225,225,1)',
+    greyAlt: 'lightgrey',
 
     // SCREENSIZES
     smVertical: '31.25rem',
