@@ -108,34 +108,34 @@ class Maps extends Component {
   render() {
     return (
       <Wrapper>
-        <PageHeading>Maps Overview</PageHeading>
+        <PageHeading>Course Overview</PageHeading>
         <BodyText>Click the buttons under each heading to sort the table accordingly. Average Differential is the default sorting method. <span className="show-for-small-vertical">Rotate your phone or view on a desktop for more statistics.</span></BodyText>
         <Card>
           <Legend items={5} legendVisible={this.state.legendVisible}>
             <button onClick={this.toggleLegend}>{this.state.legendVisible ? 'Hide legend' : 'Show legend' }</button>
             <ul>
               <li>
-                <p><span>Par</span> The total par for a map.</p>
+                <p><span>Par</span> The total par for a course.</p>
               </li>
               <li>
-                <p><span>Average Score</span> The average score for all players for a map.</p>
+                <p><span>Average Score</span> The average score for all players for a course.</p>
               </li>
               <li>
-                <p><span>Average Differential</span> The average score relative to the par for a map.</p>
+                <p><span>Average Differential</span> The average score relative to the par for a course.</p>
               </li>
               <li>
-                <p><span>Lowest/Highest Score</span> The single lowest/highest recorded score for a map.</p>
+                <p><span>Lowest/Highest Score</span> The single lowest/highest recorded score for a course.</p>
               </li>
               <li>
-                <p><span>Rounds Played</span> Aggregate number of times a map has been played.</p>
+                <p><span>Rounds Played</span> Aggregate number of times a course has been played.</p>
               </li>
             </ul>
           </Legend>
           <Table className="maps">
-            <caption className="show-for-sr">Maps</caption>
+            <caption className="show-for-sr">Courses</caption>
             <thead>
               <tr>
-                <th><span>Map</span></th>
+                <th><span>Course</span></th>
                 <th><span>Par</span></th>
                 <th><span>Avg. Score</span></th>
                 <th><span>Avg. Diff</span></th>

@@ -38,9 +38,9 @@ class LatestTourney extends Component {
             <tbody>
               <tr>
                 <th>Player</th>
-                <th><span className="show-for-small-vertical">Map 1</span><span className="hide-for-small-vertical">{this.state.meta.map1_name}</span><br/>({this.state.meta.map1_par})</th>
-                <th><span className="show-for-small-vertical">Map 2</span><span className="hide-for-small-vertical">{this.state.meta.map2_name}</span><br/>({this.state.meta.map2_par})</th>
-                <th><span className="show-for-small-vertical">Map 3</span><span className="hide-for-small-vertical">{this.state.meta.map3_name}</span><br/>({this.state.meta.map3_par})</th>
+                <th><span className="show-for-small-vertical">Course 1</span><span className="hide-for-small-vertical">{this.state.meta.map1_name}</span><br/>({this.state.meta.map1_par})</th>
+                <th><span className="show-for-small-vertical">Course 2</span><span className="hide-for-small-vertical">{this.state.meta.map2_name}</span><br/>({this.state.meta.map2_par})</th>
+                <th><span className="show-for-small-vertical">Course 3</span><span className="hide-for-small-vertical">{this.state.meta.map3_name}</span><br/>({this.state.meta.map3_par})</th>
                 <th>Total<br/>({this.state.meta.total_par})</th>
               </tr>
               <tr>

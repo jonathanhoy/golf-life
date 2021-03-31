@@ -10,9 +10,9 @@ const Legend = styled.div`
   margin-bottom: 1rem;
   button {
     background: none;
-    border: none;
-    color: ${variables.white};
-    background: ${variables.green};
+    border: 2px solid ${variables.black};
+    color: ${variables.black};
+    background: none;
     text-transform: uppercase;
     font-family: ${variables.body};
     font-size: 1rem;
