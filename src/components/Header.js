@@ -40,7 +40,7 @@ class Header extends React.Component {
       <StyledHeader showNav={this.state.showNav}>
         <Wrapper>
           <div className="container">
-            <h1>Golf Life 🏌🏻‍♂️</h1>
+          <Link onClick={this.handleClose} to="/"><h1>Golf Life 🏌🏻‍♂️</h1></Link>
             <Button className="mobile-nav-toggle" onClick={this.handleClick}>
               <i className="fas fa-bars fa-fw"></i>
               <i className="fas fa-times fa-fw"></i>
@@ -74,6 +74,9 @@ const StyledHeader = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  a {
+    text-decoration: none;
   }
   h1 {
     color: ${variables.green};
