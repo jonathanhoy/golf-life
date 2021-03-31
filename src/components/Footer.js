@@ -17,7 +17,7 @@ class Footer extends React.Component {
 }
 
 const StyledFooter = styled.footer`
-  margin: 3rem 0;
+  padding: 3rem 0;
   p {
     margin: 0;
     font-size: 0.75rem;
