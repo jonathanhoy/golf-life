@@ -44,37 +44,37 @@ const byParDifferential = ( a, b ) => {
 // MAPS
 
 const byAvgDifferentialIncreasing = ( a, b ) => {
-  if ( a.avg_differential < b.avg_differential ){
+  if ( parseFloat(a.avg_differential) < parseFloat(b.avg_differential) ){
     return -1;
   }
-  if ( a.avg_differential > b.avg_differential ){
+  if ( parseFloat(a.avg_differential) > parseFloat(b.avg_differential) ){
     return 1;
   }
 }
 
 const byAvgDifferentialDecreasing = ( a, b ) => {
-  if ( a.avg_differential > b.avg_differential ){
+  if ( parseFloat(a.avg_differential) > parseFloat(b.avg_differential) ){
     return -1;
   }
-  if ( a.avg_differential < b.avg_differential ){
+  if ( parseFloat(a.avg_differential) < parseFloat(b.avg_differential) ){
     return 1;
   }
 }
 
 const byAvgScoreIncreasing = ( a, b ) => {
-  if ( a.avg_score < b.avg_score ){
+  if ( parseFloat(a.avg_score) < parseFloat(b.avg_score) ){
     return -1;
   }
-  if ( a.avg_score > b.avg_score ){
+  if ( parseFloat(a.avg_score) > parseFloat(b.avg_score) ){
     return 1;
   }
 }
 
 const byAvgScoreDecreasing = ( a, b ) => {
-  if ( a.avg_score > b.avg_score ){
+  if ( parseFloat(a.avg_score) > parseFloat(b.avg_score) ){
     return -1;
   }
-  if ( a.avg_score < b.avg_score ){
+  if ( parseFloat(a.avg_score) < parseFloat(b.avg_score) ){
     return 1;
   }
 }
