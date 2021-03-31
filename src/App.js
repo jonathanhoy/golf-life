@@ -1,4 +1,6 @@
 import React from 'react';
+import styled from 'styled-components';
+import variables from './styles/variables';
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -15,19 +17,25 @@ function App() {
     <div className="App">
       <Router>
         <ScrollToTop>
-          <Header />
-          <main>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/players" component={Players} />
-            <Route exact path="/tournaments" component={PastTournaments} />
-            <Route exact path="/maps" component={Maps} />
-            <Route exact path="/about" component={About} />
-          </main>
-          <Footer />
+          <SiteContainer>
+            <Header />
+            <main>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/players" component={Players} />
+              <Route exact path="/tournaments" component={PastTournaments} />
+              <Route exact path="/maps" component={Maps} />
+              <Route exact path="/about" component={About} />
+            </main>
+            <Footer />
+          </SiteContainer>
         </ScrollToTop>
       </Router>
     </div>
   );
 }
+
+const SiteContainer = styled.div`
+  background-color: ${variables.green};
+`;
 
 export default App;
