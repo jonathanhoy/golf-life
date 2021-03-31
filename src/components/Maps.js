@@ -127,7 +127,7 @@ class Maps extends Component {
                 <p><span>Lowest/Highest Score</span> The single lowest/highest recorded score for a course.</p>
               </li>
               <li>
-                <p><span>Rounds Played</span> Aggregate number of times a course has been played.</p>
+                <p><span>Rounds Played</span> Total number of times a course has been played by all players.</p>
               </li>
             </ul>
           </Legend>
