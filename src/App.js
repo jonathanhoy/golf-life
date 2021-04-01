@@ -7,6 +7,7 @@ import PastTournaments from './components/PastTournaments';
 import Players from './components/Players';
 import Maps from './components/Maps';
 import About from './components/About';
+import Admin from './components/Admin';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -22,6 +23,7 @@ function App() {
             <Route exact path="/results" component={PastTournaments} />
             <Route exact path="/courses" component={Maps} />
             <Route exact path="/about" component={About} />
+            <Route exact path="/admin" component={Admin} />
           </main>
           <Footer />
         </ScrollToTop>
