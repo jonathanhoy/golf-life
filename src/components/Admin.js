@@ -5,6 +5,16 @@ import Wrapper from '../styles/Wrapper';
 import PageHeading from '../styles/PageHeading';
 import BodyText from '../styles/BodyText';
 import { Card, CardHeading } from '../styles/Card';
+import swal from '@sweetalert/with-react';
+
+const sucessAlert = () => {
+  swal(
+    <div>
+      <h2>Success!</h2>
+      <p>Tournament results have been uploaded.</p>
+    </div>
+  )
+}
 
 function Admin() {
 	const [name, setName] = useState('');
@@ -22,7 +32,8 @@ function Admin() {
 				objt
 			)
 			.then((response) => {
-				console.log(response);
+				// console.log(response);
+        sucessAlert();
 			});
 	};
 

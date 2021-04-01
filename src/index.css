@@ -59,3 +59,28 @@ main {
   white-space: nowrap; 
   width: 1px;
 }
+
+/* Swal */
+
+.swal-modal {
+  border-radius: 0;
+  font-family: 'Inconsolata', monospace;
+}
+
+.swal-footer {
+  text-align: center;
+}
+
+.swal-button {
+  padding: 7px 19px;
+  border-radius: 0;
+  font-size: 18px;
+  background-color: #2E8B57;
+  border: 3px solid #2E8B57;
+  font-family: 'Inconsolata', monospace;
+}
+
+.swal-button:not([disabled]):hover {
+  background-color: #2E8B57;
+  border: 3px solid #2E8B57;
+}
