@@ -6,7 +6,7 @@ import PageHeading from '../styles/PageHeading';
 import BodyText from '../styles/BodyText';
 import Legend from '../styles/Legend';
 import { SortButton } from '../styles/Button';
-import { firebase, maps } from '../firebase';
+import { firebase, mapsData } from '../firebase';
 import { 
   byAvgDifferentialIncreasing, 
   byAvgDifferentialDecreasing, 
@@ -26,21 +26,21 @@ class Maps extends Component {
   constructor() {
     super();
     this.state = {
-      meta: [],
+      mapsData: [],
       active: 'byAvgDifferentialIncreasing',
       legendVisible: false,
     }
   }
 
   componentDidMount() {
-    const dbRef = firebase.database().ref(`${maps}`);
+    const dbRef = firebase.database().ref(`${mapsData}`);
     dbRef.on('value', (response) => {
       const data = response.val();
       // Sort data to get latest tournament
       const sortedData = data.sort(byAvgDifferentialIncreasing);
-      let newMeta = [];
-      newMeta = [...sortedData];
-      const cleanedMeta = newMeta
+      let newData = [];
+      newData = [...sortedData];
+      const cleanedData = newData
       // eslint-disable-next-line
       .filter((course) => {
         if (course !== undefined) {
@@ -56,7 +56,7 @@ class Maps extends Component {
         }
       })
       this.setState({
-        meta: cleanedMeta,
+        mapsData: cleanedData,
       })
     });
   }
@@ -64,7 +64,7 @@ class Maps extends Component {
   handleClick = (e) => {
     const id = e.target.id;
     let newSortedArr = [];
-    let temp = this.state.meta;
+    let temp = this.state.mapsData;
     if (id === "byAvgDifferentialIncreasing") {
       temp.sort(byAvgDifferentialIncreasing);
     } else if (id === "byAvgDifferentialDecreasing") {
@@ -92,7 +92,7 @@ class Maps extends Component {
     }
     newSortedArr = temp;
     this.setState({
-      meta: newSortedArr,
+      mapsData: newSortedArr,
       active: id,
     })
   }
@@ -185,7 +185,7 @@ class Maps extends Component {
                 </th>
               </tr>
               {
-                this.state.meta.map((course) => {
+                this.state.mapsData.map((course) => {
                   return (
                     <tr key={course.map}>
                       <td>{course.map}</td>

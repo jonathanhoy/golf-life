@@ -12,19 +12,17 @@ const config = {
 };
 firebase.initializeApp(config);
 
-const records = '1mDdt2Y3_Yb-0ByOOQhbiAJ1rsv0E7ct41vRdyoBE64s/match_record/';
-const meta = '1mDdt2Y3_Yb-0ByOOQhbiAJ1rsv0E7ct41vRdyoBE64s/tourney_meta/';
-const wins = '1mDdt2Y3_Yb-0ByOOQhbiAJ1rsv0E7ct41vRdyoBE64s/leaderboard/';
-const accolades_meta = '1mDdt2Y3_Yb-0ByOOQhbiAJ1rsv0E7ct41vRdyoBE64s/accolades_meta/';
-const accolades_best_differential = '1mDdt2Y3_Yb-0ByOOQhbiAJ1rsv0E7ct41vRdyoBE64s/accolades_best_differential/';
-const maps = '1mDdt2Y3_Yb-0ByOOQhbiAJ1rsv0E7ct41vRdyoBE64s/accolades_maps/';
+const tournamentData = '1uh4KVYzMEADn9PfI22Zxyq9Ial6arK0cOVcJ_T4z6oU/tournament_data/';
+const leaderboardData = '1uh4KVYzMEADn9PfI22Zxyq9Ial6arK0cOVcJ_T4z6oU/leaderboard_data/';
+const roundData = '1uh4KVYzMEADn9PfI22Zxyq9Ial6arK0cOVcJ_T4z6oU/round_data/';
+const accoladesBestDiffData = '1uh4KVYzMEADn9PfI22Zxyq9Ial6arK0cOVcJ_T4z6oU/accolades_best_diff_data/';
+const mapsData = '1uh4KVYzMEADn9PfI22Zxyq9Ial6arK0cOVcJ_T4z6oU/map_data/';
 
 export {
     firebase,
-    records,
-    meta,
-    wins,
-    accolades_best_differential,
-    accolades_meta,
-    maps
+    tournamentData,
+    leaderboardData,
+    roundData,
+    accoladesBestDiffData,
+    mapsData,
 };
