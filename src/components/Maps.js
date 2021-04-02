@@ -105,14 +105,28 @@ class Maps extends Component {
     ))
   }
 
-  format = (num) => {
-    if (num > 0) {
-        return `+${num}`;
+  format = (score, par = null) => {
+    if (par === null) {
+      // formatting avg diff
+      const res = score;
+      if (res > 0) {
+        return `+${res}`;
+      }
+      if (res < 0) {
+        return `-${res}`;
+      }
+      return `E`;
+    } else if (par !== null) {
+      // formatting lowest score diff
+      const res = score - par;
+      if (res > 0) {
+        return `${score} (+${res})`;
+      }
+      if (res < 0) {
+        return `${score} (${res})`;
+      }
+      return `${score} (E)`;
     }
-    if (num === 0) {
-        return 'E';
-    }
-    return `-${num}`;
   }
 
   render() {
@@ -202,7 +216,7 @@ class Maps extends Component {
                       <td>{course.par}</td>
                       <td>{course.avg_score}</td>
                       <td>{this.format(course.avg_differential)}</td>
-                      <td>{course.min_score}</td>
+                      <td>{this.format(course.min_score, course.par)}</td>
                       <td>{course.max_score}</td>
                       <td>{course.rounds_played}</td>
                     </tr>
