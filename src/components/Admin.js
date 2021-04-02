@@ -11,23 +11,40 @@ import moment from 'moment';
 
 
 function Admin() {
+  const [metaMaps, setMetaMaps] = useState('');
+  const [metaPlayers, setMetaPlayers] = useState('');
   const [tournamentID, setTournamentID] = useState(0);
   const [date, setDate] = useState('');
 	const [name, setName] = useState('');
 	const [map, setMap] = useState('');
 	const [score, setScore] = useState('');
 
+  // Get length of tournament data node to determine current tournament's ID
   useEffect(() => {
-    // Get length of tournament data node to determine current tournament's ID
-    const dbRef = firebase.database().ref(`${tournamentData}`);
-    dbRef.on('value', (response) => {
+    const tournament = firebase.database().ref(`${tournamentData}`);
+    tournament.on('value', (response) => {
       const data = response.val();
       setTournamentID(data.length);
     });
-
-    // Get current date and set it
-    setDate(moment().format('M/D/YY'));
   });
+
+  // Get current date and set it
+  useEffect(() => {
+    setDate(moment().format('M/D/YY'));
+  }, []);
+  
+  // Get map and player information from Firebase
+  useEffect(() => {
+    const meta = firebase.database().ref(`/tournament_meta`);
+    meta.on('value', (response) => {
+      const data = response.val();
+      let { maps, players } = data;
+      maps = maps.slice(1);
+      players = players.slice(1);
+      setMetaMaps(maps);
+      setMetaPlayers(players);
+    });
+  }, [])
 
   const sucessAlert = () => {
     swal(
@@ -61,8 +78,6 @@ function Admin() {
         <form>
           <h3>Tournament #{tournamentID}</h3>
           <p>{date}</p>
-          <label htmlFor="tournament">Tournnament</label>
-          <input id="tournament" onChange={(e) => setName(e.target.value)}></input>
           <label htmlFor="name">Name</label>
           <input id="name" onChange={(e) => setName(e.target.value)}></input>
           <label htmlFor="map">Map</label>

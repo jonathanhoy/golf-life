@@ -145,7 +145,7 @@ class Maps extends Component {
                 <p><span>Average Score</span> The average score for all players for a course.</p>
               </li>
               <li>
-                <p><span>Average Differential</span> The average score relative to the par for a course.</p>
+                <p><span>Average Differential</span> The average score above or below the par for a course.</p>
               </li>
               <li>
                 <p><span>Lowest/Highest Score</span> The single lowest/highest recorded score for a course.</p>
