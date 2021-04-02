@@ -50,8 +50,8 @@ class Maps extends Component {
       // eslint-disable-next-line
       .map((course) => {
         if (typeof course.avg_differential === 'number' && typeof course.avg_score === 'number') {
-          course.avg_differential = course.avg_differential.toFixed(2);
-          course.avg_score = course.avg_score.toFixed(2);
+          course.avg_differential = Math.ceil(course.avg_differential);
+          course.avg_score = Math.ceil(course.avg_score);
           return course;
         }
       })
@@ -103,6 +103,16 @@ class Maps extends Component {
         legendVisible: !prevState.legendVisible,
       }
     ))
+  }
+
+  format = (num) => {
+    if (num > 0) {
+        return `+${num}`;
+    }
+    if (num === 0) {
+        return 'E';
+    }
+    return `-${num}`;
   }
 
   render() {
@@ -191,7 +201,7 @@ class Maps extends Component {
                       <td>{course.map}</td>
                       <td>{course.par}</td>
                       <td>{course.avg_score}</td>
-                      <td>{course.avg_differential}</td>
+                      <td>{this.format(course.avg_differential)}</td>
                       <td>{course.min_score}</td>
                       <td>{course.max_score}</td>
                       <td>{course.rounds_played}</td>
