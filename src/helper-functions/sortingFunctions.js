@@ -50,6 +50,12 @@ const byAvgDifferentialIncreasing = ( a, b ) => {
   if ( parseFloat(a.avg_differential) > parseFloat(b.avg_differential) ){
     return 1;
   }
+  if ( parseFloat(a.avg_score) < parseFloat(b.avg_score) ){
+    return -1;
+  }
+  if ( parseFloat(a.avg_score) > parseFloat(b.avg_score) ){
+    return 1;
+  }
 }
 
 const byAvgDifferentialDecreasing = ( a, b ) => {
@@ -57,6 +63,12 @@ const byAvgDifferentialDecreasing = ( a, b ) => {
     return -1;
   }
   if ( parseFloat(a.avg_differential) < parseFloat(b.avg_differential) ){
+    return 1;
+  }
+  if ( parseFloat(a.avg_score) > parseFloat(b.avg_score) ){
+    return -1;
+  }
+  if ( parseFloat(a.avg_score) < parseFloat(b.avg_score) ){
     return 1;
   }
 }

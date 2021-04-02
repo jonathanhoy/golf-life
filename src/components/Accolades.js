@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Card, CardHeading } from '../styles/Card';
 import variables from '../styles/variables';
-import { firebase, accolades_meta } from '../firebase';
+import { firebase, roundData } from '../firebase';
 import { byParDifferential } from '../helper-functions/sortingFunctions';
 import { Link } from 'react-router-dom';
 
@@ -12,12 +12,12 @@ class Accolades extends React.Component {
   constructor() {
     super();
     this.state = {
-      course: [],
+      roundData: [],
     }
   }
 
   componentDidMount() {
-    const dbRef = firebase.database().ref(`${accolades_meta}`);
+    const dbRef = firebase.database().ref(`${roundData}`);
     dbRef.on('value', (response) => {
       const data = response.val();
       const sortedData = data.sort(byParDifferential);
@@ -33,10 +33,10 @@ class Accolades extends React.Component {
         item.image = item.map.toLowerCase().replace(" ", "-");
         return item;
       });
-      let newCourse = [];
-      newCourse = cleanedData;
+      let newData = [];
+      newData = cleanedData;
       this.setState({
-        course: newCourse,
+        roundData: newData,
       })
     });
   }
@@ -50,7 +50,7 @@ class Accolades extends React.Component {
             <h3>Best Courses</h3>
             <Course>
               {
-                this.state.course.map((item, index) => {
+                this.state.roundData.map((item, index) => {
                   return (
                     <li className={`course-item course-item-${index + 1}`} key={item.data}>
                       <span>

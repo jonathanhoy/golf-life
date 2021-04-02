@@ -4,33 +4,33 @@ import Table from '../styles/Table';
 import Wrapper from '../styles/Wrapper';
 import PageHeading from '../styles/PageHeading';
 import BodyText from '../styles/BodyText';
-import { firebase, meta } from '../firebase';
+import { firebase, tournamentData } from '../firebase';
 import { byLatestTourney } from '../helper-functions/sortingFunctions';
 
 class PastTournaments extends Component {
   constructor() {
     super();
     this.state = {
-      meta: []
+      tournamentData: []
     }
   }
 
   componentDidMount() {
-    const dbRef = firebase.database().ref(`${meta}`);
+    const dbRef = firebase.database().ref(`${tournamentData}`);
     dbRef.on('value', (response) => {
       const data = response.val();
       // Sort data to get latest tournament
       const sortedData = data.sort(byLatestTourney);
-      let newMeta = [];
-      newMeta = [...sortedData];
+      let newData = [];
+      newData = [...sortedData];
       // eslint-disable-next-line
-      const cleanedMeta = newMeta.filter((tourney) => {
+      const cleanedData = newData.filter((tourney) => {
         if (tourney !== undefined && tourney.tourney_id >= 1) {
           return tourney;
         }
       })
       this.setState({
-        meta: cleanedMeta,
+        tournamentData: cleanedData,
       })
     });
   }
@@ -41,7 +41,7 @@ class PastTournaments extends Component {
         <PageHeading>Results</PageHeading>
         <BodyText>Tournaments are cumulative scores over three randomly picked courses.</BodyText>
         <CardList>
-          {(this.state.meta).map((tournament) => {
+          {(this.state.tournamentData).map((tournament) => {
               return (
                 <Card key={tournament.tourney_id}>
                   <h3>Tournament #{tournament.tourney_id}</h3>

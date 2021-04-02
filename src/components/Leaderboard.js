@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardHeading } from '../styles/Card';
 import Table from '../styles/Table';
-import { firebase, wins } from '../firebase';
+import { firebase, leaderboardData } from '../firebase';
 import { byWinPercentage } from '../helper-functions/sortingFunctions';
 import { Link } from 'react-router-dom';
 
@@ -9,26 +9,26 @@ class Leaderboard extends Component {
   constructor() {
     super();
     this.state = {
-      wins: []
+      leaderboardData: []
     }
   }
 
   componentDidMount() {
-    const dbRef = firebase.database().ref(`${wins}`);
+    const dbRef = firebase.database().ref(`${leaderboardData}`);
     dbRef.on('value', (response) => {
       const data = response.val();
       // Sort data to get latest tournament
       const sortedData = data.sort(byWinPercentage);
-      let newWins = {};
+      let newData = {};
       // eslint-disable-next-line
-      const filteredWins = sortedData.filter((item) => {
+      const filteredData = sortedData.filter((item) => {
           if (item !== null) {
               return item;
           };
       })
-      newWins = filteredWins;
+      newData = filteredData;
       this.setState({
-        wins: newWins,
+        leaderboardData: newData,
       })
     });
   }
@@ -47,7 +47,7 @@ class Leaderboard extends Component {
                 <th>Win %</th>
               </tr>
               {
-                this.state.wins.map((player) => {
+                this.state.leaderboardData.map((player) => {
                   return (
                     <tr key={player.player}>
                       <td>{player.player}</td>
