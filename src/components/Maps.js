@@ -133,7 +133,7 @@ class Maps extends Component {
     return (
       <Wrapper>
         <PageHeading>Course Overview</PageHeading>
-        <BodyText><span className="show-for-small">Tap</span><span className="hide-for-small">Click</span> the arrows under each heading to sort the table accordingly. Average Differential is the default sorting method. <span className="show-for-small-vertical">Rotate your phone or view on a computer for more data.</span></BodyText>
+        <BodyText><span className="show-for-small">Tap</span><span className="hide-for-small">Click</span> the arrows under each heading to sort the table accordingly. <span className="show-for-small-vertical">Rotate your phone or view on a computer for more data.</span></BodyText>
         <Card>
           <Legend items={5} legendVisible={this.state.legendVisible}>
             <button onClick={this.toggleLegend}>{this.state.legendVisible ? 'Hide legend' : 'Show legend' }</button>
