@@ -36,6 +36,11 @@ const Card = styled.div`
       margin-left: 0.5rem;
     }
   }
+  select, input[type="number"]  {
+    font-family: ${variables.body};
+    color: ${variables.black};
+    font-size: 1rem;
+  }
 `;
 
 const CardList = styled.ul`
