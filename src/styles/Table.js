@@ -71,20 +71,6 @@ const Table = styled.table`
     th {
       .button-group {
         white-space: nowrap;
-        /* button {
-          background: none;
-          border: none;
-          position: relative;
-          z-index: 5;
-          &[data-active="true"] {
-            background: red;
-          }
-          i {
-            color: ${variables.white};
-            font-size: 1.5rem;
-            pointer-events: none;
-          }
-        } */
       }
     }
     th:first-of-type {
@@ -95,6 +81,9 @@ const Table = styled.table`
     }
     td:last-of-type {
       font-weight: 400;
+    }
+    tbody tr th {
+      padding-top: 0;
     }
     @media (max-width: ${variables.smVertical}) {
       tr {
