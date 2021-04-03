@@ -139,16 +139,16 @@ class Maps extends Component {
             <button onClick={this.toggleLegend}>{this.state.legendVisible ? 'Hide legend' : 'Show legend' }</button>
             <ul>
               <li>
-                <p><span>Par</span> The total par for a course.</p>
+                <p><span>Par</span> Total par for a course.</p>
               </li>
               <li>
-                <p><span>Average Score</span> The average score for all players for a course.</p>
+                <p><span>Average Score</span> Average score for all players for a course.</p>
               </li>
               <li>
-                <p><span>Average Differential</span> The average score relative to the par for a course.</p>
+                <p><span>Average Margin</span> Average score's difference above or below the par for a course.</p>
               </li>
               <li>
-                <p><span>Lowest/Highest Score</span> The single lowest/highest recorded score for a course.</p>
+                <p><span>Lowest/Highest Score</span> Single lowest/highest recorded score for a course.</p>
               </li>
               <li>
                 <p><span>Rounds Played</span> Total number of times a course has been played by all players.</p>
@@ -161,8 +161,8 @@ class Maps extends Component {
               <tr>
                 <th><span>Course</span></th>
                 <th><span>Par</span></th>
-                <th><span>Avg. Score</span></th>
-                <th><span>Avg. Diff</span></th>
+                <th><span>Average Score</span></th>
+                <th><span>Average Margin</span></th>
                 <th><span>Lowest Score</span></th>
                 <th><span>Highest Score</span></th>
                 <th><span>Rounds Played</span></th>
@@ -170,7 +170,7 @@ class Maps extends Component {
             </thead>
             <tbody>
               <tr>
-                <th></th>
+                <th><span className="show-for-sr">empty cell</span></th>
                 <th>
                   <div className="button-group">
                     <SortButton id="byParDecreasing" active={this.state.active} onClick={this.handleClick}><i className="fas fa-caret-up "></i></SortButton>
