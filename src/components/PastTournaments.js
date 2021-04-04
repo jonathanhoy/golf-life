@@ -50,9 +50,9 @@ class PastTournaments extends Component {
                     <tbody>
                       <tr>
                         <th>Player</th>
-                        <th><span className="show-for-small-vertical">Map 1</span><span className="hide-for-small-vertical">{tournament.map1_name}</span><br/>({tournament.map1_par})</th>
-                        <th><span className="show-for-small-vertical">Map 2</span><span className="hide-for-small-vertical">{tournament.map2_name}</span><br/>({tournament.map2_par})</th>
-                        <th><span className="show-for-small-vertical">Map 3</span><span className="hide-for-small-vertical">{tournament.map3_name}</span><br/>({tournament.map3_par})</th>
+                        <th><span className="show-for-small-vertical">1</span><span className="hide-for-small-vertical">{tournament.map1_name}</span><br/>({tournament.map1_par})</th>
+                        <th><span className="show-for-small-vertical">2</span><span className="hide-for-small-vertical">{tournament.map2_name}</span><br/>({tournament.map2_par})</th>
+                        <th><span className="show-for-small-vertical">3</span><span className="hide-for-small-vertical">{tournament.map3_name}</span><br/>({tournament.map3_par})</th>
                         <th>Total<br/>({tournament.total_par})</th>
                       </tr>
                       <tr data-immaculate-victory={tournament.immaculate_victory}>
