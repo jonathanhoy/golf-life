@@ -160,11 +160,6 @@ const AccoladeList = styled.ul`
       display: grid;
       align-items: center;
       grid-template-columns: 1fr 1fr;
-        span:nth-child(2) {
-          p {
-            padding-left: 0;
-          }
-        }
     }
   }
 `;
