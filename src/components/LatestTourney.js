@@ -32,7 +32,7 @@ class LatestTourney extends Component {
       <>
         <Card>
           <CardHeading>Latest Result</CardHeading>
-          <h3>Tournament #{this.state.tournamentData.tourney_id}</h3>
+          <h3>Tournament #{this.state.tournamentData.id}</h3>
           <p>{this.state.tournamentData.date}</p>
           <Table className="tournament">
             <tbody>

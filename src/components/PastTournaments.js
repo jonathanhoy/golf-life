@@ -25,7 +25,7 @@ class PastTournaments extends Component {
       newData = [...sortedData];
       // eslint-disable-next-line
       const cleanedData = newData.filter((tourney) => {
-        if (tourney !== undefined && tourney.tourney_id >= 1) {
+        if (tourney !== undefined && tourney.id >= 1) {
           return tourney;
         }
       })
@@ -43,8 +43,8 @@ class PastTournaments extends Component {
         <CardList>
           {(this.state.tournamentData).map((tournament) => {
               return (
-                <Card key={tournament.tourney_id}>
-                  <h3>Tournament #{tournament.tourney_id}</h3>
+                <Card key={tournament.id}>
+                  <h3>Tournament #{tournament.id}</h3>
                   <p>{tournament.date}</p>
                   <Table className="tournament">
                     <tbody>
