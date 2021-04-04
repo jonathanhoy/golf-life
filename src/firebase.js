@@ -13,10 +13,10 @@ const config = {
 firebase.initializeApp(config);
 
 const tournamentData = '1uh4KVYzMEADn9PfI22Zxyq9Ial6arK0cOVcJ_T4z6oU/tournament_data/';
-const leaderboardData = '1uh4KVYzMEADn9PfI22Zxyq9Ial6arK0cOVcJ_T4z6oU/leaderboard_data/';
-const roundData = '1uh4KVYzMEADn9PfI22Zxyq9Ial6arK0cOVcJ_T4z6oU/round_data/';
-const accoladesBestDiffData = '1uh4KVYzMEADn9PfI22Zxyq9Ial6arK0cOVcJ_T4z6oU/accolades_best_diff_data/';
-const mapsData = '1uh4KVYzMEADn9PfI22Zxyq9Ial6arK0cOVcJ_T4z6oU/map_data/';
+const leaderboardData = '1nPa50yPIXaRo7NtZSYOnxrYmVRFte5Th-UsnBElCxlU/leaderboard_data/';
+const roundData = '1UzsVl1sinvQ7KSJmhpEul-dWy6irRs2kT8vl2-pKhQY/round_data/';
+const accoladesBestDiffData = '1ivqDBKjyvkByZRkRXQ6UrW8pji3SxCzbP_ZCysI92vQ/accolades_best_diff_data/';
+const mapsData = '1bAWvUi9VPpQI3GYZaGLD088z41IQlUSfPqTjcxhetuY/map_data/';
 
 export {
     firebase,
