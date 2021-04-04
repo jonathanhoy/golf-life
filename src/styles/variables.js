@@ -8,12 +8,13 @@ const variables = {
     grey: 'rgba(225,225,225,1)',
     greyAlt: 'lightgrey',
 
-    gold: '#c1bfbf',
-    goldGradient: 'linear-gradient(315deg, #c1bfbf 0%, #af8231 74%)',
+
+    gold: '#d4af37',
+    goldGradient: 'linear-gradient(315deg, #c1bfbf 0%, #d4af37 74%)',
     silver: '#bdd4e7',
     silverGradient: 'linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%)',
-    bronze: '#f5d3c8',
-    bronzeGradient: 'linear-gradient(315deg, #f5d3c8 0%, #c08552 74%)',
+    bronze: '#c1bfbf',
+    bronzeGradient: 'linear-gradient(315deg, #c1bfbf 0%, #af8231 74%)',
 
     // SCREENSIZES
     smVertical: '31.25rem',
