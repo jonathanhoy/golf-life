@@ -55,7 +55,7 @@ class PastTournaments extends Component {
                         <th><span className="show-for-small-vertical">Map 3</span><span className="hide-for-small-vertical">{tournament.map3_name}</span><br/>({tournament.map3_par})</th>
                         <th>Total<br/>({tournament.total_par})</th>
                       </tr>
-                      <tr>
+                      <tr data-immaculate-victory={tournament.immaculate_victory}>
                         <td>{tournament.first_player}</td>
                         <td data-below-par={tournament.first_map1_under_par}>{tournament.first_map1_score}</td>
                         <td data-below-par={tournament.first_map2_under_par}>{tournament.first_map2_score}</td>

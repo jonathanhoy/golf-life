@@ -6,6 +6,9 @@ const Table = styled.table`
   width: 100%;
   text-align: center;
   border-collapse: collapse;
+  tr[data-immaculate-victory=true] {
+    background-image: ${variables.goldGradient};
+  }
   tr:first-of-type {
     background: ${variables.green};
   }

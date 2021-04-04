@@ -43,7 +43,7 @@ class LatestTourney extends Component {
                 <th><span className="show-for-small-vertical">3</span><span className="hide-for-small-vertical">{this.state.tournamentData.map3_name}</span><br/>({this.state.tournamentData.map3_par})</th>
                 <th>Total<br/>({this.state.tournamentData.total_par})</th>
               </tr>
-              <tr>
+              <tr data-immaculate-victory={this.state.tournamentData.immaculate_victory}>
                 <td>{this.state.tournamentData.first_player}</td>
                 <td data-below-par={this.state.tournamentData.first_map1_under_par}>{this.state.tournamentData.first_map1_score}</td>
                 <td data-below-par={this.state.tournamentData.first_map2_under_par}>{this.state.tournamentData.first_map2_score}</td>
