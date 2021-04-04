@@ -7,7 +7,7 @@ const Table = styled.table`
   text-align: center;
   border-collapse: collapse;
   tr[data-immaculate-victory=true] {
-    background-image: ${variables.goldGradient};
+    background: ${variables.gold};
   }
   tr:first-of-type {
     background: ${variables.green};
