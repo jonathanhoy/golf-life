@@ -62,12 +62,11 @@ class Accolades extends React.Component {
                     <li className={`accolade-item accolade-item-${index + 1}`} key={item.data}>
                       <span>
                         <p className="accolade-item-player">{item.player}</p>
-                        <p className="accolade-item-date">{item.date}</p>
+                        <p className="accolade-item-margin">{item.differential}</p>
                       </span>
-                      <img className="accolade-item-image" src={`./assets/maps/${item.image}.png`} alt={`${item.map} Course`}></img>
                       <span>
-                        <p className="accolade-item-map">{item.map}</p>
-                        <p className="accolade-item-score">{item.score} ({item.differential})</p>
+                        <p className="accolade-item-date">#{item.tourney_id} - {item.date}</p>
+                        <p className="accolade-item-map">{item.map} ({item.map_par})</p>
                       </span>
                     </li>
                   )
@@ -141,23 +140,18 @@ const AccoladeList = styled.ul`
       display: block;
       width: 100%;
     }
-  }
-  &.course {
-
-  }
-  &.tournament {
     .accolade-item {
       &-margin {
         font-weight: 700;
         font-size: 2.5rem;
         margin: 1rem;
       }
-      span:nth-child(2) {
-        text-align: left;
-      }
-      ul {
-        list-style: none;
-      }
+    }
+    span:nth-child(2) {
+      text-align: left;
+    }
+    ul {
+      list-style: none;
     }
   }
   @media (max-width: ${variables.sm}) {
@@ -165,34 +159,12 @@ const AccoladeList = styled.ul`
     .accolade-item {
       display: grid;
       align-items: center;
-    }
-    &.course {
-      .accolade-item {
-        grid-template-columns: 1fr 1fr 2fr;
-        span:first-of-type {
-          grid-column: 1 / 2;
-          grid-row: 1 / 2;
-        }
-        span:last-of-type {
-          grid-column: 2 / 3;
-          grid-row: 1 / 2;
-        }
-        img {
-          grid-column: 3 / 4;
-          grid-row: 1 / 2;
-        }
-      }
-    }
-    &.tournament {
-      .accolade-item {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
         span:nth-child(2) {
           p {
             padding-left: 0;
           }
         }
-      }
     }
   }
 `;
