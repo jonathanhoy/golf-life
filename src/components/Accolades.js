@@ -119,16 +119,16 @@ const AccoladeList = styled.ul`
   .accolade-item {
     text-align: center;
     &-1 {
-      background-color: #c1bfbf;
-      background-image: linear-gradient(315deg, #c1bfbf 0%, #af8231 74%);
+      background-color: ${variables.gold};
+      background-image: ${variables.goldGradient};
     }
     &-2 {
-      background-color: #bdd4e7;
-      background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
+      background-color: ${variables.silver};
+      background-image: ${variables.silverGradient};
     }
     &-3 {
-      background-color: #f5d3c8;
-      background-image: linear-gradient(315deg, #f5d3c8 0%, #c08552 74%);
+      background-color: ${variables.bronze};
+      background-image: ${variables.bronzeGradient};
     }
     p {
       padding: 0 0.5rem;
