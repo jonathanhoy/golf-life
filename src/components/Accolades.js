@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { Card, CardHeading } from '../styles/Card';
 import variables from '../styles/variables';
-import { firebase, roundData } from '../firebase';
-import { byParDifferential } from '../helper-functions/sortingFunctions';
+import { firebase, roundData, accoladesBestTourneyResultData } from '../firebase';
+import { byParDifferential, byFirstPlayerTotalMargin } from '../helper-functions/sortingFunctions';
 import { Link } from 'react-router-dom';
-
+import format from '../helper-functions/format';
 import moment from 'moment';
 
 class Accolades extends React.Component {
@@ -13,20 +13,15 @@ class Accolades extends React.Component {
     super();
     this.state = {
       roundData: [],
+      tourneyResultData: [],
     }
   }
 
   componentDidMount() {
-    const dbRef = firebase.database().ref(`${roundData}`);
-    dbRef.on('value', (response) => {
+    const getRoundData = firebase.database().ref(`${roundData}`);
+    getRoundData.on('value', (response) => {
       const data = response.val();
       const sortedData = data.sort(byParDifferential);
-      // const cleanedData = sortedData
-      // .filter((item) => {
-      //   if (item.differential == sortedData[0].differential) {
-      //     return item;
-      //   }
-      // })
       const cleanedData = sortedData.slice(0, 3);
       cleanedData.map((item) => {
         item.date = moment(item.date).format('M/D/YY');
@@ -39,6 +34,18 @@ class Accolades extends React.Component {
         roundData: newData,
       })
     });
+
+    const getTourneyResultData = firebase.database().ref(`${accoladesBestTourneyResultData}`);
+    getTourneyResultData.on('value', (response) => {
+      const data = response.val();
+      const sortedData = data.sort(byFirstPlayerTotalMargin);
+      const cleanedData = sortedData.slice(0, 3);
+      let newData = [];
+      newData = cleanedData;
+      this.setState({
+        tourneyResultData: newData,
+      })
+    });
   }
 
   render() {
@@ -48,30 +55,52 @@ class Accolades extends React.Component {
           <CardHeading>Accolades</CardHeading>
           <AccoladesContainer>
             <h3>Best Courses</h3>
-            <Course>
+            <AccoladeList className="course">
               {
                 this.state.roundData.map((item, index) => {
                   return (
-                    <li className={`course-item course-item-${index + 1}`} key={item.data}>
+                    <li className={`accolade-item accolade-item-${index + 1}`} key={item.data}>
                       <span>
-                        <p className="course-item-player">{item.player}</p>
-                        <p className="course-item-date">{item.date}</p>
+                        <p className="accolade-item-player">{item.player}</p>
+                        <p className="accolade-item-date">{item.date}</p>
                       </span>
-                      <img className="course-item-image" src={`./assets/maps/${item.image}.png`} alt={`${item.map} Course`}></img>
+                      <img className="accolade-item-image" src={`./assets/maps/${item.image}.png`} alt={`${item.map} Course`}></img>
                       <span>
-                        <p className="course-item-map">{item.map}</p>
-                        <p className="course-item-score">{item.score} ({item.differential})</p>
+                        <p className="accolade-item-map">{item.map}</p>
+                        <p className="accolade-item-score">{item.score} ({item.differential})</p>
                       </span>
                     </li>
                   )
                 })
               }
-            </Course>
+            </AccoladeList>
             <Link to="/courses">See more courses <i className="fa fa-caret-right"></i></Link>
           </AccoladesContainer>
           <AccoladesContainer>
-            {/* <h3>Best Differential</h3> */}
-            <h3>More accolades coming soon...</h3>
+            <h3>Best Tournaments</h3>
+            <AccoladeList className="tournament">
+              {
+                this.state.tourneyResultData.map((item, index) => {
+                  return (
+                    <li className={`accolade-item accolade-item-${index + 1}`} key={item.data}>
+                      <span>
+                        <p className="accolade-item-player">{item.first_player}</p>
+                        <p className="accolade-item-margin">{format(item.first_total_differential)}</p>
+                      </span>
+                      <span>
+                        <p className="accolade-item-tournament">#{item.id} - {item.date}</p>
+                        <ul>
+                          <li><p className="accolade-item-map">{item.map1_name}</p></li>
+                          <li><p className="accolade-item-map">{item.map2_name}</p></li>
+                          <li><p className="accolade-item-map">{item.map3_name}</p></li>
+                        </ul>
+                      </span>
+                    </li>
+                  )
+                })
+              }
+            </AccoladeList>
+            <Link to="/results">See more results <i className="fa fa-caret-right"></i></Link>
           </AccoladesContainer>
         </Card>
       </>
@@ -79,7 +108,7 @@ class Accolades extends React.Component {
   }
 }
 
-const Course = styled.ul`
+const AccoladeList = styled.ul`
   list-style: none;
   padding: 0;
   display: grid;
@@ -87,7 +116,7 @@ const Course = styled.ul`
   grid-gap: 1rem;
   margin-top: 1rem;
   margin-bottom: 0;
-  .course-item {
+  .accolade-item {
     text-align: center;
     &-1 {
       background-color: #c1bfbf;
@@ -105,7 +134,7 @@ const Course = styled.ul`
       padding: 0 0.5rem;
       font-weight: 400;
     }
-    .course-item-player {
+    .accolade-item-player {
       font-weight: 700;
     }
     img {
@@ -113,12 +142,32 @@ const Course = styled.ul`
       width: 100%;
     }
   }
+  &.course {
+
+  }
+  &.tournament {
+    .accolade-item {
+      &-margin {
+        font-weight: 700;
+        font-size: 2.5rem;
+        margin: 1rem;
+      }
+      span:nth-child(2) {
+        text-align: left;
+      }
+      ul {
+        list-style: none;
+      }
+    }
+  }
   @media (max-width: ${variables.sm}) {
     grid-template-columns: 1fr;
-    .course-item {
+    .accolade-item {
       display: grid;
       align-items: center;
-      &-1, &-3 {
+    }
+    &.course {
+      .accolade-item {
         grid-template-columns: 1fr 1fr 2fr;
         span:first-of-type {
           grid-column: 1 / 2;
@@ -133,19 +182,15 @@ const Course = styled.ul`
           grid-row: 1 / 2;
         }
       }
-      &-2 {
-        grid-template-columns: 2fr 1fr 1fr;
-        span:first-of-type {
-          grid-column: 2 / 3;
-          grid-row: 1 / 2;
-        }
-        span:last-of-type {
-          grid-column: 3 / 4;
-          grid-row: 1 / 2;
-        }
-        img {
-          grid-column: 1 / 2;
-          grid-row: 1 / 2;
+    }
+    &.tournament {
+      .accolade-item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        span:nth-child(2) {
+          p {
+            padding-left: 0;
+          }
         }
       }
     }

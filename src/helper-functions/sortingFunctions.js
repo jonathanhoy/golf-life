@@ -163,6 +163,15 @@ const byRoundsPlayedDecreasing = ( a, b ) => {
   }
 }
 
+const byFirstPlayerTotalMargin = ( a, b ) => {
+  if ( a.first_total_differential < b.first_total_differential ){
+    return -1;
+  }
+  if ( a.first_total_differential > b.first_total_differential ){
+    return 1;
+  }
+}
+
 export {
   byLatestTourney,
   byLatestTourneyAndMapCount,
@@ -180,4 +189,5 @@ export {
   byHighestScoreDecreasing,
   byRoundsPlayedIncreasing,
   byRoundsPlayedDecreasing,
+  byFirstPlayerTotalMargin,
 };
