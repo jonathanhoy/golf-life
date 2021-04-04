@@ -21,6 +21,7 @@ import {
   byRoundsPlayedIncreasing,
   byRoundsPlayedDecreasing,
 } from '../helper-functions/sortingFunctions';
+import format from '../helper-functions/format';
 
 class Maps extends Component {
   constructor() {
@@ -103,30 +104,6 @@ class Maps extends Component {
         legendVisible: !prevState.legendVisible,
       }
     ))
-  }
-
-  format = (score, par = null) => {
-    if (par === null) {
-      // formatting avg diff
-      const res = score;
-      if (res > 0) {
-        return `+${res}`;
-      }
-      if (res < 0) {
-        return `-${res}`;
-      }
-      return `E`;
-    } else if (par !== null) {
-      // formatting lowest score diff
-      const res = score - par;
-      if (res > 0) {
-        return `${score} (+${res})`;
-      }
-      if (res < 0) {
-        return `${score} (${res})`;
-      }
-      return `${score} (E)`;
-    }
   }
 
   render() {
@@ -215,8 +192,8 @@ class Maps extends Component {
                       <td>{course.map}</td>
                       <td>{course.par}</td>
                       <td>{course.avg_score}</td>
-                      <td>{this.format(course.avg_differential)}</td>
-                      <td>{this.format(course.min_score, course.par)}</td>
+                      <td>{format(course.avg_differential)}</td>
+                      <td>{format(course.min_score, course.par)}</td>
                       <td>{course.max_score}</td>
                       <td>{course.rounds_played}</td>
                     </tr>

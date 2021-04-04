@@ -17,6 +17,7 @@ const leaderboardData = '1nPa50yPIXaRo7NtZSYOnxrYmVRFte5Th-UsnBElCxlU/leaderboar
 const roundData = '1UzsVl1sinvQ7KSJmhpEul-dWy6irRs2kT8vl2-pKhQY/round_data/';
 const accoladesBestDiffData = '1ivqDBKjyvkByZRkRXQ6UrW8pji3SxCzbP_ZCysI92vQ/accolades_best_diff_data/';
 const mapsData = '1bAWvUi9VPpQI3GYZaGLD088z41IQlUSfPqTjcxhetuY/map_data/';
+const accoladesBestTourneyResultData = '1PQx4iiQtbVrQ29_1QACtEg28fbc3wmGz0HvmN-wSi-M/accolades_best_tourney_result_data/';
 
 export {
     firebase,
@@ -25,4 +26,5 @@ export {
     roundData,
     accoladesBestDiffData,
     mapsData,
+    accoladesBestTourneyResultData,
 };
