@@ -203,8 +203,8 @@ class Maps extends Component {
                 </th>
                 <th>
                   <div className="button-group">
-                    <SortButton id="byRoundsPlayedDecreasing" onClick={this.handleClick}><i className="fas fa-caret-up "></i></SortButton>
-                    <SortButton id="byRoundsPlayedIncreasing" onClick={this.handleClick}><i className="fas fa-caret-down "></i></SortButton>
+                    <SortButton id="byRoundsPlayedDecreasing" active={this.state.active} onClick={this.handleClick}><i className="fas fa-caret-up "></i></SortButton>
+                    <SortButton id="byRoundsPlayedIncreasing" active={this.state.active} onClick={this.handleClick}><i className="fas fa-caret-down "></i></SortButton>
                   </div>
                 </th>
               </tr>
