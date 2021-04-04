@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardHeading } from '../styles/Card';
 import Table from '../styles/Table';
-import { firebase, leaderboardData } from '../firebase';
+import { firebase, playerData } from '../firebase';
 import { byWinPercentage } from '../helper-functions/sortingFunctions';
 import { Link } from 'react-router-dom';
 
@@ -14,7 +14,7 @@ class Leaderboard extends Component {
   }
 
   componentDidMount() {
-    const dbRef = firebase.database().ref(`${leaderboardData}`);
+    const dbRef = firebase.database().ref(`${playerData}`);
     dbRef.on('value', (response) => {
       const data = response.val();
       // Sort data to get latest tournament
