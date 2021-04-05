@@ -61,12 +61,15 @@ class Accolades extends React.Component {
                   return (
                     <li className={`accolade-item accolade-item-${index + 1}`} key={item.data}>
                       <span>
-                        <p className="accolade-item-player">{item.player}</p>
-                        <p className="accolade-item-margin">{item.differential}</p>
+                        <p className="tournament"><span><span className="show-for-small">Tournament</span> #{item.tourney_id}</span><span>{item.date}</span></p>
                       </span>
                       <span>
-                        <p className="accolade-item-date">#{item.tourney_id} - {item.date}</p>
-                        <p className="accolade-item-map">{item.map} ({item.map_par})</p>
+                        <p className="player">{item.player}</p>
+                        <p className="margin">{item.differential}</p>
+                      </span>
+                      <span>
+                        <p className="map">{item.map}</p>
+                        <p className="par">Par {item.map_par}</p>
                       </span>
                     </li>
                   )
@@ -83,16 +86,19 @@ class Accolades extends React.Component {
                   return (
                     <li className={`accolade-item accolade-item-${index + 1}`} key={item.data}>
                       <span>
-                        <p className="accolade-item-player">{item.first_player}</p>
-                        <p className="accolade-item-margin">{format(item.first_total_differential)}</p>
+                        <p className="tournament"><span><span className="show-for-small">Tournament</span> #{item.id}</span><span>{item.date}</span></p>
                       </span>
                       <span>
-                        <p className="accolade-item-tournament">#{item.id} - {item.date}</p>
+                        <p className="player">{item.first_player}</p>
+                        <p className="margin">{format(item.first_total_differential)}</p>
+                      </span>
+                      <span>
                         <ul>
-                          <li><p className="accolade-item-map">{item.map1_name}</p></li>
-                          <li><p className="accolade-item-map">{item.map2_name}</p></li>
-                          <li><p className="accolade-item-map">{item.map3_name}</p></li>
+                          <li><p className="map">{item.map1_name}</p></li>
+                          <li><p className="map">{item.map2_name}</p></li>
+                          <li><p className="map">{item.map3_name}</p></li>
                         </ul>
+                        <p className="par">Par {item.total_par}</p>
                       </span>
                     </li>
                   )
@@ -116,7 +122,6 @@ const AccoladeList = styled.ul`
   margin-top: 1rem;
   margin-bottom: 0;
   .accolade-item {
-    text-align: center;
     &-1 {
       background-color: ${variables.gold};
       background-image: ${variables.goldGradient};
@@ -132,26 +137,34 @@ const AccoladeList = styled.ul`
     p {
       padding: 0 0.5rem;
       font-weight: 400;
-    }
-    .accolade-item-player {
-      font-weight: 700;
+      text-align: center;
     }
     img {
       display: block;
       width: 100%;
     }
-    .accolade-item {
-      &-margin {
-        font-weight: 700;
-        font-size: 2.5rem;
-        margin: 1rem;
-      }
-    }
-    span:nth-child(2) {
-      text-align: left;
-    }
     ul {
       list-style: none;
+    }
+    .tournament {
+      display: flex;
+      justify-content: space-between;
+      background: rgba(0,0,0,0.1);
+      margin: 0;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    .player {
+      margin-top: 1rem;
+      font-weight: 700;
+      text-align: center;
+      font-size: 1.25rem;
+    }
+    .margin {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin: 1rem;
+      text-align: center;
     }
   }
   @media (max-width: ${variables.sm}) {
@@ -160,6 +173,9 @@ const AccoladeList = styled.ul`
       display: grid;
       align-items: center;
       grid-template-columns: 1fr 1fr;
+      span:nth-child(1) {
+        grid-column: 1 / 3;
+      }
     }
   }
 `;
