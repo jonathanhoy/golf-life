@@ -104,6 +104,24 @@ const Table = styled.table`
       }
     }
   }
+  &.players {
+    td:last-of-type {
+      font-weight: 400;
+    }
+    @media (max-width: ${variables.smVertical}) {
+      tr {
+        th:nth-child(4),
+        td:nth-child(4),
+        th:nth-child(6),
+        td:nth-child(6) {
+          display: none;
+        }
+        th:first-of-type, th:not(:first-of-type) {
+          width: 25%;
+        }
+      }
+    }
+  }
 `;
 
 export default Table;

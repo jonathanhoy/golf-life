@@ -23,7 +23,7 @@ class Players extends Component {
     super();
     this.state = {
       playerData: [],
-      active: 'byWinPercentageIncreasing',
+      active: 'byWinsIncreasing',
     }
   }
 
@@ -80,7 +80,7 @@ class Players extends Component {
         <PageHeading>Player Overview</PageHeading>
         {/* <BodyText>Click on a player's name to see more information about that player.</BodyText> */}
         <Card>
-        <Table className="maps">
+        <Table className="players">
             <caption className="show-for-sr">Courses</caption>
             <thead>
               <tr>
@@ -89,6 +89,7 @@ class Players extends Component {
                 <th><span>Tournaments Played</span></th>
                 <th><span>Win %</span></th>
                 <th><span>Average Margin</span></th>
+                <th><span>Lowest Margin</span></th>
               </tr>
               <tr>
                 <th><span className="show-for-sr">empty cell</span></th>
@@ -128,6 +129,7 @@ class Players extends Component {
                       <td>{player.games_played}</td>
                       <td>{player.win_rate}</td>
                       <td>{player.avg_differential}</td>
+                      <td>{player.lowest_margin}</td>
                     </tr>
                   )
                 })
