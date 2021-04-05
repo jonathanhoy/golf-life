@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardList } from '../styles/Card';
+import { Card } from '../styles/Card';
 import Table from '../styles/Table';
 import Wrapper from '../styles/Wrapper';
 import PageHeading from '../styles/PageHeading';
