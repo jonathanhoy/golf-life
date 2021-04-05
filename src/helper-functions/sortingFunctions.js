@@ -96,6 +96,24 @@ const byMarginDecreasing = ( a, b ) => {
   }
 }
 
+const byLowestMarginIncreasing = ( a, b ) => {
+  if ( a.lowest_margin > b.lowest_margin ){
+    return -1;
+  }
+  if ( a.lowest_margin < b.lowest_margin ){
+    return 1;
+  }
+}
+
+const byLowestMarginDecreasing = ( a, b ) => {
+  if ( a.lowest_margin < b.lowest_margin ){
+    return -1;
+  }
+  if ( a.lowest_margin > b.lowest_margin ){
+    return 1;
+  }
+}
+
 const byParDifferential = ( a, b ) => {
   if ( a.differential < b.differential ){
     return -1;
@@ -248,6 +266,8 @@ export {
   byTournamentsPlayedDecreasing,
   byMarginIncreasing,
   byMarginDecreasing,
+  byLowestMarginIncreasing,
+  byLowestMarginDecreasing,
   byParDifferential,
   byAvgDifferentialIncreasing,
   byAvgDifferentialDecreasing,
