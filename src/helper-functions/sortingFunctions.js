@@ -22,11 +22,76 @@ const byLatestTourneyAndMapCount = ( a, b ) => {
   }
 }
 
-const byWinPercentage = ( a, b ) => {
+// PLAYERS
+
+const byWinsIncreasing = ( a, b ) => {
+  if ( a.total_wins > b.total_wins ){
+    return -1;
+  }
+  if ( a.total_wins < b.total_wins ){
+    return 1;
+  }
+}
+
+const byWinsDecreasing = ( a, b ) => {
+  if ( a.total_wins < b.total_wins ){
+    return -1;
+  }
+  if ( a.total_wins > b.total_wins ){
+    return 1;
+  }
+}
+
+const byWinPercentageIncreasing = ( a, b ) => {
   if ( a.win_rate > b.win_rate ){
     return -1;
   }
   if ( a.win_rate < b.win_rate ){
+    return 1;
+  }
+}
+
+const byWinPercentageDecreasing = ( a, b ) => {
+  if ( a.win_rate < b.win_rate ){
+    return -1;
+  }
+  if ( a.win_rate > b.win_rate ){
+    return 1;
+  }
+}
+
+const byTournamentsPlayedIncreasing = ( a, b ) => {
+  if ( a.games_played > b.games_played ){
+    return -1;
+  }
+  if ( a.games_played < b.games_played ){
+    return 1;
+  }
+}
+
+const byTournamentsPlayedDecreasing = ( a, b ) => {
+  if ( a.games_played < b.games_played ){
+    return -1;
+  }
+  if ( a.games_played > b.games_played ){
+    return 1;
+  }
+}
+
+const byMarginIncreasing = ( a, b ) => {
+  if ( a.avg_differential > b.avg_differential ){
+    return -1;
+  }
+  if ( a.avg_differential < b.avg_differential ){
+    return 1;
+  }
+}
+
+const byMarginDecreasing = ( a, b ) => {
+  if ( a.avg_differential < b.avg_differential ){
+    return -1;
+  }
+  if ( a.avg_differential > b.avg_differential ){
     return 1;
   }
 }
@@ -175,7 +240,14 @@ const byFirstPlayerTotalMargin = ( a, b ) => {
 export {
   byLatestTourney,
   byLatestTourneyAndMapCount,
-  byWinPercentage,
+  byWinsIncreasing,
+  byWinsDecreasing,
+  byWinPercentageIncreasing,
+  byWinPercentageDecreasing,
+  byTournamentsPlayedIncreasing,
+  byTournamentsPlayedDecreasing,
+  byMarginIncreasing,
+  byMarginDecreasing,
   byParDifferential,
   byAvgDifferentialIncreasing,
   byAvgDifferentialDecreasing,
