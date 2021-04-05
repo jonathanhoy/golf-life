@@ -62,7 +62,8 @@ const Table = styled.table`
       white-space: nowrap;
     }
   }
-  &.maps {
+  &.maps,
+  &.players {
     tr:nth-child(1) {
       padding-bottom: 0;
     }
@@ -88,6 +89,8 @@ const Table = styled.table`
     tbody tr th {
       padding-top: 0;
     }
+  }
+  &.maps {
     @media (max-width: ${variables.smVertical}) {
       tr {
         th:nth-child(3),
@@ -96,6 +99,21 @@ const Table = styled.table`
         td:nth-child(3),
         td:nth-child(6),
         td:nth-child(7) {
+          display: none;
+        }
+        th:first-of-type, th:not(:first-of-type) {
+          width: 25%;
+        }
+      }
+    }
+  }
+  &.players {
+    @media (max-width: ${variables.smVertical}) {
+      tr {
+        th:nth-child(3),
+        td:nth-child(3),
+        th:nth-child(4),
+        td:nth-child(4) {
           display: none;
         }
         th:first-of-type, th:not(:first-of-type) {
