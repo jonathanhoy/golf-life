@@ -61,15 +61,15 @@ class Accolades extends React.Component {
                   return (
                     <li className={`accolade-item accolade-item-${index + 1}`} key={item.data}>
                       <span>
-                        <p className="tournament"><span><span className="show-for-small">Tournament</span> #{item.tourney_id}</span><span>{item.date}</span></p>
-                      </span>
-                      <span>
                         <p className="player">{item.player}</p>
                         <p className="margin">{item.differential}</p>
                       </span>
                       <span>
                         <p className="map">{item.map}</p>
                         <p className="par">Par {item.map_par}</p>
+                      </span>
+                      <span>
+                        <p className="tournament"><span><span className="show-for-small">Tournament</span> #{item.tourney_id}</span><span>{item.date}</span></p>
                       </span>
                     </li>
                   )
@@ -86,9 +86,6 @@ class Accolades extends React.Component {
                   return (
                     <li className={`accolade-item accolade-item-${index + 1}`} key={item.data}>
                       <span>
-                        <p className="tournament"><span><span className="show-for-small">Tournament</span> #{item.id}</span><span>{item.date}</span></p>
-                      </span>
-                      <span>
                         <p className="player">{item.first_player}</p>
                         <p className="margin">{format(item.first_total_differential)}</p>
                       </span>
@@ -99,6 +96,9 @@ class Accolades extends React.Component {
                           <li><p className="map">{item.map3_name}</p></li>
                         </ul>
                         <p className="par">Par {item.total_par}</p>
+                      </span>
+                      <span>
+                        <p className="tournament"><span><span className="show-for-small">Tournament</span> #{item.id}</span><span>{item.date}</span></p>
                       </span>
                     </li>
                   )
@@ -177,6 +177,13 @@ const AccoladeList = styled.ul`
       align-items: center;
       grid-template-columns: 1fr 1fr;
       span:nth-child(1) {
+        grid-column: 1 / 2;
+      }
+      span:nth-child(2) {
+        grid-column: 2 / 3;
+      }
+      span:nth-child(3) {
+        grid-row: 2 / 3;
         grid-column: 1 / 3;
       }
     }
