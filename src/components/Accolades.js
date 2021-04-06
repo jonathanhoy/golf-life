@@ -66,10 +66,9 @@ class Accolades extends React.Component {
                       </span>
                       <span>
                         <p className="map">{item.map}</p>
-                        <p className="par">Par {item.map_par}</p>
                       </span>
                       <span>
-                        <p className="tournament"><span><span className="show-for-small">Tournament</span> #{item.tourney_id}</span><span>{item.date}</span></p>
+                        <p className="tournament"><span><span className="show-for-small">Tournament</span> #{item.tourney_id}</span><span>Par {item.map_par}</span></p>
                       </span>
                     </li>
                   )
@@ -95,10 +94,9 @@ class Accolades extends React.Component {
                           <li><p className="map">{item.map2_name}</p></li>
                           <li><p className="map">{item.map3_name}</p></li>
                         </ul>
-                        <p className="par">Par {item.total_par}</p>
                       </span>
                       <span>
-                        <p className="tournament"><span><span className="show-for-small">Tournament</span> #{item.id}</span><span>{item.date}</span></p>
+                        <p className="tournament"><span><span className="show-for-small">Tournament</span> #{item.id}</span><span>Par {item.total_par}</span></p>
                       </span>
                     </li>
                   )
@@ -146,16 +144,8 @@ const AccoladeList = styled.ul`
     ul {
       list-style: none;
     }
-    .tournament {
-      display: flex;
-      justify-content: space-between;
-      background: rgba(0,0,0,0.1);
-      margin: 0;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-    }
     .player {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
       font-weight: 700;
       text-align: center;
       font-size: 1.25rem;
@@ -163,11 +153,16 @@ const AccoladeList = styled.ul`
     .margin {
       font-weight: 700;
       font-size: 2.5rem;
-      margin: 1rem;
+      margin: 1.5rem;
       text-align: center;
     }
-    .par {
-      margin-bottom: 1rem;
+    .tournament {
+      display: flex;
+      justify-content: space-between;
+      background: rgba(0,0,0,0.1);
+      margin: 0;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
     }
   }
   @media (max-width: ${variables.sm}) {
@@ -185,6 +180,12 @@ const AccoladeList = styled.ul`
       span:nth-child(3) {
         grid-row: 2 / 3;
         grid-column: 1 / 3;
+      }
+      .player {
+        margin-top: 1rem;
+      }
+      .tournament {
+        margin-top: 0;
       }
     }
   }
