@@ -144,8 +144,6 @@ class Maps extends Component {
                 <th><span>Highest Score</span></th>
                 <th><span>Rounds Played</span></th>
               </tr>
-            </thead>
-            <tbody>
               <tr>
                 <th><span className="show-for-sr">empty cell</span></th>
                 <th>
@@ -185,6 +183,9 @@ class Maps extends Component {
                   </div>
                 </th>
               </tr>
+            </thead>
+            <tbody>
+              
               {
                 this.state.mapsData.map((course) => {
                   return (

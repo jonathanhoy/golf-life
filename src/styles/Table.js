@@ -9,10 +9,10 @@ const Table = styled.table`
   tr[data-immaculate-victory=true] {
     background: ${variables.gold};
   }
-  tr:first-of-type {
+  thead tr {
     background: ${variables.green};
   }
-  tr:nth-child(2n+1) {
+  tbody tr:nth-child(2n) {
     background: ${variables.greyAlt};
   }
   th, td {

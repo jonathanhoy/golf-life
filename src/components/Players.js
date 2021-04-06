@@ -87,7 +87,7 @@ class Players extends Component {
         <BodyText><span className="show-for-small">Tap</span><span className="hide-for-small">Click</span> the arrows under each heading to sort the table accordingly. <span className="show-for-small-vertical">Rotate your phone or view on a computer for more data.</span></BodyText>
         <Card>
         <Table className="players">
-            <caption className="show-for-sr">Courses</caption>
+            <caption className="show-for-sr">Players</caption>
             <thead>
               <tr>
                 <th><span>Player</span></th>

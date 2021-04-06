@@ -39,13 +39,16 @@ class Leaderboard extends Component {
         <Card>
           <CardHeading>Standings</CardHeading>
           <Table className="wins">
-            <tbody>
+            <caption className="show-for-sr">Leaderboard</caption>
+            <thead>
               <tr>
                 <th>Player</th>
                 <th>Wins</th>
                 <th>Tournaments played</th>
                 <th>Win %</th>
               </tr>
+            </thead>
+            <tbody>
               {
                 this.state.leaderboardData.map((player) => {
                   return (
