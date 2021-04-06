@@ -166,6 +166,9 @@ const AccoladeList = styled.ul`
       margin: 1rem;
       text-align: center;
     }
+    .par {
+      margin-bottom: 1rem;
+    }
   }
   @media (max-width: ${variables.sm}) {
     grid-template-columns: 1fr;
