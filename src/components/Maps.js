@@ -109,7 +109,7 @@ class Maps extends Component {
   render() {
     return (
       <Wrapper>
-        <PageHeading>Course Overview</PageHeading>
+        <PageHeading>Courses</PageHeading>
         <BodyText><span className="show-for-small">Tap</span><span className="hide-for-small">Click</span> the arrows under each heading to sort the table accordingly. <span className="show-for-small-vertical">Rotate your phone or view on a computer for more data.</span></BodyText>
         <Card>
           <Legend items={5} legendVisible={this.state.legendVisible}>
