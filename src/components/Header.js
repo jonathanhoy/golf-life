@@ -3,7 +3,7 @@ import variables from '../styles/variables';
 import Wrapper from '../styles/Wrapper';
 import { Button } from '../styles/Button';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 class Header extends React.Component {
 
@@ -47,11 +47,11 @@ class Header extends React.Component {
             </Button>
             <nav>
               <div>
-                <Link onClick={this.handleClose} to="/">Home</Link>
-                <Link onClick={this.handleClose} to="/results">Results</Link>
-                <Link onClick={this.handleClose} to="/players">Players</Link>
-                <Link onClick={this.handleClose} to="/courses">Courses</Link>
-                <Link onClick={this.handleClose} to="/about">About</Link>
+                <NavLink activeClassName="selected" onClick={this.handleClose} exact to="/">Home</NavLink>
+                <NavLink activeClassName="selected" onClick={this.handleClose} to="/results">Results</NavLink>
+                <NavLink activeClassName="selected" onClick={this.handleClose} to="/players">Players</NavLink>
+                <NavLink activeClassName="selected" onClick={this.handleClose} to="/courses">Courses</NavLink>
+                <NavLink activeClassName="selected" onClick={this.handleClose} to="/about">About</NavLink>
               </div>
             </nav>
           </div>
@@ -100,12 +100,16 @@ const StyledHeader = styled.header`
     justify-content: space-between;
     div {
       a {
-        color: ${variables.green};
+        color: ${variables.black};
         font-family: ${variables.heading};
         font-size: 1.25rem;
         text-decoration: none;
         margin-left: 1.5rem;
         font-weight: 600;
+        &.selected {
+          color: ${variables.green};
+          border-bottom: 3px solid ${variables.green};
+        }
       }
     }
   }
